@@ -51,11 +51,13 @@
   /* HERO */
   .hero {
     min-height: calc(100vh - 60px);
-    background: var(--crow);
+    background: #2a1545;
     background-image:
-      radial-gradient(ellipse 70% 60% at 75% 40%, rgba(80,32,109,0.45) 0%, transparent 65%),
-      radial-gradient(ellipse 50% 70% at 15% 85%, rgba(80,32,109,0.25) 0%, transparent 60%),
-      radial-gradient(ellipse 40% 40% at 60% 20%, rgba(175,155,9,0.07) 0%, transparent 50%);
+      linear-gradient(135deg, #3b1d5e 0%, #2a1545 40%, #1e1038 70%, #150b2e 100%),
+      radial-gradient(ellipse 60% 55% at 30% 50%, rgba(110,55,160,0.55) 0%, transparent 60%),
+      radial-gradient(ellipse 50% 70% at 10% 90%, rgba(80,32,109,0.35) 0%, transparent 55%),
+      radial-gradient(ellipse 40% 40% at 65% 20%, rgba(175,155,9,0.08) 0%, transparent 50%);
+    background-blend-mode: normal, screen, screen, screen;
     display: flex; align-items: center;
     padding: 80px 40px;
     position: relative; overflow: hidden;
@@ -73,7 +75,7 @@
   }
   .hero-date { color: var(--text-dim); font-family: var(--ff-body); font-size: 18px; letter-spacing: .06em; }
   .hero-logo { display: flex; align-items: center; justify-content: center; position: relative; }
-  .hero-logo img { width: 624px; height: auto; position: relative; z-index: 1; mix-blend-mode: screen; }
+  .hero-logo img { width: 624px; height: auto; position: relative; z-index: 1; }
 
   /* DIVIDER */
   .gold-rule { width: 100%; height: 1px; background: var(--rule-gold); }
