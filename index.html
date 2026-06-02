@@ -116,7 +116,8 @@
   /* FOOTER */
   footer { background: var(--crow); border-top: 1px solid var(--rule-gold); padding: 48px 40px; }
   .footer-inner { max-width: 960px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px; }
-  .footer-wordmark { font-family: var(--ff-display); font-weight: 700; font-size: 20px; color: var(--white); }
+  .footer-wordmark { display: flex; align-items: center; }
+  .footer-logo { height: 32px; width: auto; mix-blend-mode: screen; }
   .footer-chips { display: flex; align-items: center; gap: 16px; flex-wrap: wrap; }
   .chip { background: var(--lotus); color: white; font-family: var(--ff-body); font-size: 10px; letter-spacing: .1em; text-transform: uppercase; padding: 4px 12px; }
   .footer-credit { color: var(--text-dim); font-size: 12px; font-family: var(--ff-body); }
@@ -303,7 +304,7 @@
 <!-- FOOTER -->
 <footer id="next-steps">
   <div class="footer-inner">
-    <div class="footer-wordmark">Big Sis</div>
+    <div class="footer-wordmark"><img src="bigsis-logo.png" alt="Big Sis" class="footer-logo"></div>
     <div class="footer-chips">
       <span class="chip">Confidential</span>
       <span class="footer-credit">Big Sis Creative Studio × Lucky Crow Apothecary &amp; Readeasy™ · 2026</span>
