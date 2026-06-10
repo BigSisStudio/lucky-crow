@@ -115,13 +115,17 @@
   .q-options li { font-size: 15px; color: var(--text-mid); font-family: var(--ff-body); }
   .q-note { font-size: 13px; color: var(--moon); font-family: var(--ff-body); font-style: italic; margin-top: 10px; padding-top: 10px; border-top: 1px solid var(--rule); }
 
+  .neighborhood-list li { display: flex; flex-direction: column; gap: 3px; padding-left: 0; text-indent: 0; }
+  .neighborhood-heading { font-family: var(--ff-body); font-size: 15px; font-weight: 600; color: var(--text); }
+  .neighborhood-subs { font-family: var(--ff-body); font-size: 13px; color: var(--text-dim); padding-left: 1.4em; }
+
   /* PLATFORM */
   .platform-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 32px; }
   .platform-card { background: var(--bg-3); border: 1px solid var(--rule); border-radius: 2px; padding: 28px; border-top: 3px solid rgba(245,240,250,0.1); }
   .platform-rec { background: var(--bg-3); border: 1px solid var(--rule); border-top: 3px solid var(--gold); border-radius: 2px; padding: 32px; margin-top: 24px; }
   .platform-rec-label { font-family: var(--ff-body); font-size: 13px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--gold); margin-bottom: 14px; }
   .platform-rec-name { font-family: var(--ff-display); font-size: 26px; font-weight: 700; letter-spacing: 0; text-transform: none; display: block; margin-top: 4px; }
-  .platform-rec p { font-size: 16px; line-height: 1.7; color: var(--text-mid); margin-bottom: 16px; }
+  .platform-rec p { font-size: 16px; line-height: 1.7; color: var(--text-mid); margin-bottom: 16px; font-weight: 700; }
   .platform-rec ul { list-style: none; display: flex; flex-direction: column; gap: 10px; }
   .platform-rec li { font-size: 16px; line-height: 1.6; color: var(--text-mid); }
   .platform-card.recommended { border-top: 3px solid var(--gold); }
@@ -373,10 +377,10 @@
           <div class="q-text">How far are you willing to travel regularly for a spot you love?</div>
           <div class="q-rationale">Helps understand realistic catchment area and informs location decisions. Madison residents can be very neighborhood-loyal.</div>
           <ul class="q-options">
+            <li>→ Within walking distance</li>
             <li>→ Under 10 minutes</li>
             <li>→ 10–20 minutes</li>
-            <li>→ 20–30 minutes</li>
-            <li>→ I'd go across town if it was worth it</li>
+            <li>→ I'd go across town</li>
           </ul>
         </div>
 
@@ -501,7 +505,15 @@
           <div class="q-label">Q10, Neighborhood</div>
           <div class="q-text">Which area do you live in or spend the most time in?</div>
           <div class="q-rationale">Geographic clustering helps map demand by neighborhood and informs location decisions.</div>
-          <div class="q-note">⚠ Neighborhood list pending, to be discussed with Katy.</div>
+          <ul class="q-options neighborhood-list">
+            <li><span class="neighborhood-heading">→ Downtown/Isthmus</span><span class="neighborhood-subs">Campus, Capitol Square/Downtown, Tenney-Lapham</span></li>
+            <li><span class="neighborhood-heading">→ Campus Edge & Near West</span><span class="neighborhood-subs">Regent/Greenbush/Vilas, Dudgeon-Monroe, Crawford/Marlborough/Nakoma, Westmorland, Shorewood Hills, Midvale Heights/Hilldale</span></li>
+            <li><span class="neighborhood-heading">→ Near East Side</span><span class="neighborhood-subs">Marquette (Willy Street), Schenk-Atwood, Eken Park/Hawthorne, Grandview Commons/Far East Side, Glendale/Elvehjem</span></li>
+            <li><span class="neighborhood-heading">→ Northside</span><span class="neighborhood-subs">Sherman, Cherokee Park, Brentwood Village/Berkley Oaks, Maple Bluff</span></li>
+            <li><span class="neighborhood-heading">→ South & Far West</span><span class="neighborhood-subs">Bay Creek, South Madison, Wexford Ridge/High Point, Arbor Hills, Allied Drive, Leopold</span></li>
+            <li><span class="neighborhood-heading">→ Nearby Suburbs</span><span class="neighborhood-subs">Verona, Middleton, Fitchburg, Monona, Cottage Grove, Sun Prairie</span></li>
+            <li><span class="neighborhood-heading">→ Other (please specify)</span></li>
+          </ul>
         </div>
 
         <div class="q-card">
@@ -587,16 +599,23 @@
 
     <div class="platform-rec reveal">
       <div class="platform-rec-label">Our recommendation:<br><span class="platform-rec-name">Tally</span></div>
-      <p>Here's why it meets every requirement:</p>
+      <p>Here's why it meets our requirements:</p>
       <ul>
         <li>→ Unlimited responses on the free plan, no caps to worry about as distribution scales</li>
-        <li>→ Conditional logic allows us to automatically switch the reward offer off after a set number of redemptions, so the incentive cap manages itself</li>
-        <li>→ Generates a QR code and shareable link natively, ready for flyers, social posts, and direct outreach</li>
+        <li>→ Automatically switch the reward offer off after a set number of redemptions, so the incentive cap manages itself</li>
+        <li>→ Generates a shareable link natively</li>
         <li>→ Supports all question types needed: multiple choice, scale, open field, two-part, and email capture</li>
-        <li>→ Creative flexibility to match the visual tone of the brand without paying for branding removal</li>
         <li>→ All response data exports cleanly to a spreadsheet for easy management and segmentation</li>
-        <li>→ Simple enough to hand off and manage independently once built</li>
+        <li>→ Easy template sharing and handoff</li>
       </ul>
+      <div style="margin-top: 24px;">
+        <p>Additional features to consider with Pro ($29/month)</p>
+        <ul>
+          <li>→ Creative flexibility to match the visual tone of the brand</li>
+          <li>→ Capturing partial submissions</li>
+          <li>→ Automated "Thank You" email</li>
+        </ul>
+      </div>
     </div>
   </div>
 </section>
