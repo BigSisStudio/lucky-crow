@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Lucky Crow Apothecary & Readeasy — Survey Review & Recommendations</title>
+<title>Lucky Crow Apothecary & Readeasy — Survey Flyer Creative Review</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Epilogue:wght@0,400;0,600;0,700&display=swap" rel="stylesheet">
@@ -210,14 +210,29 @@
   .chip { background: var(--lotus); color: white; font-family: var(--ff-body); font-size: 10px; letter-spacing: .1em; text-transform: uppercase; padding: 4px 12px; }
   .footer-credit { color: var(--text-dim); font-size: 12px; font-family: var(--ff-body); }
 
+  /* FLYERS */
+  .flyer-recap { margin-bottom: 48px; }
+  .flyer-recap ul { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+  .flyer-recap li { font-size: 16px; line-height: 1.6; color: var(--text-mid); font-family: var(--ff-body); padding-left: 1.5em; text-indent: -1.5em; }
+  .flyer-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 24px; }
+  .flyer-card { display: flex; flex-direction: column; gap: 14px; }
+  .flyer-label { font-family: var(--ff-body); font-size: 11px; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: var(--gold); }
+  .flyer-card img { width: 100%; height: auto; border-radius: 2px; }
+
+  .flyer-expand-hint { font-family: var(--ff-body); font-size: 16px; color: var(--text-mid); font-style: italic; margin-bottom: 20px; }
+  .flyer-thumb { cursor: zoom-in; transition: opacity .2s; }
+  .flyer-thumb:hover { opacity: 0.85; }
+  #lightbox { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.92); z-index: 999; cursor: zoom-out; align-items: center; justify-content: center; }
+  #lightbox.open { display: flex; }
+  #lightbox-img { max-height: 90vh; max-width: 90vw; width: auto; height: auto; border-radius: 2px; }
+
+  .flyer-note { font-family: var(--ff-body); font-size: 13px; color: var(--text-dim); font-style: italic; margin-top: 20px; }
+
+  .archive-header-bar { background: var(--crow); padding: 24px 40px 0; border-top: 1px solid var(--rule-gold); }
+  .archive-header-label { font-family: var(--ff-body); font-size: 14px; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: var(--text-mid); }
+  .archive-btn { width: 100%; background: var(--bg-2); border: none; border-top: 3px solid var(--lotus); padding: 20px 40px; cursor: pointer; display: flex; justify-content: space-between; align-items: center; font-family: var(--ff-body); font-weight: 600; font-size: 15px; color: var(--text-dim); letter-spacing: .04em; }
   /* ARCHIVE DRAWER */
   .archive-section { background: var(--crow); }
-  .archive-btn {
-    width: 100%; background: var(--bg-2); border: none; border-top: 3px solid var(--lotus);
-    padding: 20px 40px; cursor: pointer; display: flex; justify-content: space-between; align-items: center;
-    font-family: var(--ff-body); font-weight: 600; font-size: 15px; color: var(--text-mid);
-    letter-spacing: .04em;
-  }
   .archive-btn:hover { color: var(--text); }
   .archive-chevron { transition: transform .35s ease; font-size: 18px; color: var(--lotus); }
   .archive-btn.open .archive-chevron { transform: rotate(180deg); }
@@ -284,12 +299,9 @@
 
 <!-- NAV -->
 <nav>
-  <span class="nav-project">Lucky Crow / Survey Review</span>
+  <span class="nav-project">Lucky Crow / Flyer Review</span>
   <div class="nav-links">
-    <a href="#questions">Questions</a>
-    <a href="#platform">Platform</a>
-    <a href="#distribution">Distribution</a>
-    <a href="#next-steps">Next steps</a>
+    <a href="#flyers">Flyers</a>
   </div>
 </nav>
 
@@ -301,12 +313,81 @@
     </div>
     <div class="hero-text">
       <div class="hero-label">Lucky Crow Apothecary &amp; Readeasy™</div>
-      <h1 class="hero-h1">Survey Review &amp;<br>Recommendations</h1>
-      <div class="hero-date">06.09.2026</div>
+      <h1 class="hero-h1">Survey Flyer<br>Creative Review</h1>
+      <div class="hero-date">06.16.2026</div>
     </div>
   </div>
 </section>
 
+<div class="gold-rule"></div>
+
+<!-- FLYERS -->
+<section class="sec" id="flyers" style="background: var(--bg);">
+  <div class="sec-inner">
+    <div class="sec-bar"></div>
+    <div class="sec-label">FLYERS</div>
+    <h2 class="sec-h2 reveal">Grabbing attention</h2>
+    <div class="flyer-recap reveal">
+      <ul>
+        <li>→ <strong>Messaging approach:</strong> Each flyer leads with a targeted hook for a specific audience, builds community by inviting them to help shape what's coming, and frames the survey as low-lift with a clear "2 minute survey" call to action.</li>
+        <li>→ <strong>Design approach:</strong> Visuals and copy create intrigue without revealing too much, with a prominent but unobtrusive QR code designed to grab attention in the places we'll be posting.</li>
+        <li>→ <strong>Incentive:</strong> Each flyer acknowledges a thank-you gift to reward participation.</li>
+      </ul>
+    </div>
+    <p class="flyer-expand-hint reveal">Click any flyer to expand.</p>
+    <div class="flyer-grid reveal">
+      <div class="flyer-card">
+        <div class="flyer-label">Reading</div>
+        <img src="LuckyCrow_SurveyFliers_v1_BSCS-03.png" alt="Reading Hideaway flyer" class="flyer-thumb" onclick="openLightbox(this.src)">
+      </div>
+      <div class="flyer-card">
+        <div class="flyer-label">Wellness</div>
+        <img src="LuckyCrow_SurveyFliers_v1_BSCS-02.png" alt="Plant-Powered Drink Experience flyer" class="flyer-thumb" onclick="openLightbox(this.src)">
+      </div>
+      <div class="flyer-card">
+        <div class="flyer-label">Third Space</div>
+        <img src="LuckyCrow_SurveyFliers_v1_BSCS-01.png" alt="A Space to Work, Read & Escape flyer" class="flyer-thumb" onclick="openLightbox(this.src)">
+      </div>
+    </div>
+    <p class="flyer-note reveal">Borders may need to be modified depending on printing technique.</p>
+
+    <!-- LIGHTBOX -->
+    <div id="lightbox" onclick="closeLightbox()">
+      <img id="lightbox-img" src="">
+    </div>
+  </div>
+</section>
+
+<div class="gold-rule"></div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-wordmark"><img src="bigsis-logo.png" alt="Big Sis" class="footer-logo"></div>
+    <div class="footer-chips">
+      <span class="chip">Confidential</span>
+      <span class="footer-credit">Big Sis Creative Studio × Lucky Crow Apothecary &amp; Readeasy™ · 2026</span>
+    </div>
+  </div>
+</footer>
+
+<!-- ARCHIVE DRAWERS -->
+<div class="archive-header-bar">
+  <span class="archive-header-label">Previous Presentations</span>
+</div>
+
+<div class="archive-section">
+  <button class="archive-btn" onclick="this.classList.toggle('open'); this.nextElementSibling.classList.toggle('open')">
+    <span>Survey Review &amp; Recommendations · 06.09.2026</span>
+    <span class="archive-chevron">↓</span>
+  </button>
+  <div class="archive-panel">
+    <div class="arc-inner">
+      <div class="arc-header">
+        <h3>Survey Review &amp; Recommendations</h3>
+        <p>Lucky Crow Apothecary &amp; Readeasy™ · Presentation 02 · 06.09.2026</p>
+      </div>
+      <div class="arc-pres-02">
 <div class="gold-rule"></div>
 
 <!-- SURVEY QUESTIONS -->
@@ -861,34 +942,23 @@
   </div>
 </section>
 
-<div class="gold-rule"></div>
-
-<!-- FOOTER -->
-<footer>
-  <div class="footer-inner">
-    <div class="footer-wordmark"><img src="bigsis-logo.png" alt="Big Sis" class="footer-logo"></div>
-    <div class="footer-chips">
-      <span class="chip">Confidential</span>
-      <span class="footer-credit">Big Sis Creative Studio × Lucky Crow Apothecary &amp; Readeasy™ · 2026</span>
+      </div>
     </div>
   </div>
-</footer>
+</div>
 
-<!-- ARCHIVE DRAWER -->
 <div class="archive-section">
   <button class="archive-btn" onclick="this.classList.toggle('open'); this.nextElementSibling.classList.toggle('open')">
-    <span>Previous Presentations, Survey Strategy Kickoff · 06.02.2026</span>
+    <span>Survey Strategy Kickoff · 06.02.2026</span>
     <span class="archive-chevron">↓</span>
   </button>
   <div class="archive-panel">
     <div class="arc-inner">
-
       <div class="arc-header">
         <h3>Survey Strategy Kickoff</h3>
         <p>Lucky Crow Apothecary &amp; Readeasy™ · Presentation 01 · 06.02.2026</p>
       </div>
-
-      <!-- SETTING THE STAGE -->
+            <!-- SETTING THE STAGE -->
       <div class="arc-sec">
         <div class="arc-bar"></div>
         <div class="arc-label">Setting the Stage</div>
@@ -1005,15 +1075,586 @@
         <p class="arc-callout-closing">Next comes formatting and design of the survey, as well as the promotional piece and deployment of the survey. Then, we wait and learn!</p>
       </div>
 
+
+        <p>Lucky Crow Apothecary &amp; Readeasy™ · Presentation 02 · 06.09.2026</p>
+      </div>
+      <div class="arc-pres-02">
+<div class="gold-rule"></div>
+
+<!-- SURVEY QUESTIONS -->
+<section class="sec" id="questions" style="background: var(--bg-2);">
+  <div class="sec-inner">
+    <div class="sec-bar"></div>
+    <div class="sec-label">QUESTIONS</div>
+    <h2 class="sec-h2 reveal">Gathering the good stuff</h2>
+    <div class="remember-box reveal"><span class="remember-label">Remember:</span> All questions are written using The Mom Test, a framework that asks about real past behavior instead of hypotheticals, so the responses reflect what people actually do, not what they aspire to do or what they think you want to hear.</div>
+
+    <!-- SECTION 1 -->
+    <div class="section-group reveal">
+      <div class="section-group-label">Section 1 — The Third Space</div>
+      <div class="q-list">
+
+        <div class="q-card">
+          <div class="q-label">Q1a, Where Do You Go?</div>
+          <div class="q-text">When you need to get out of the house to read, study, work, or meet up with someone, where do you go in Madison? Select all that apply.</div>
+          <div class="q-rationale">Opens with a behavior-first anchor. Captures where people actually go today rather than hypothetical preferences. Sets up context for Q2 and Q3.</div>
+          <ul class="q-options">
+            <li>→ Coffee shop or café</li>
+            <li>→ Library</li>
+            <li>→ Bookstore</li>
+            <li>→ Restaurant</li>
+            <li>→ Juice bar</li>
+            <li>→ Other (please specify)</li>
+          </ul>
+        </div>
+
+        <div class="q-card">
+          <div class="q-label">Q1b, Frequency</div>
+          <div class="q-text">How often do you visit these types of places?</div>
+          <div class="q-rationale">Frequency data reveals how habitual these visits are. A weekly visitor is a very different customer than a monthly one.</div>
+          <ul class="q-options">
+            <li>→ More than once a week</li>
+            <li>→ Once a week</li>
+            <li>→ Every other week</li>
+            <li>→ Once a month</li>
+            <li>→ Less than once a month</li>
+          </ul>
+        </div>
+
+        <div class="q-card">
+          <div class="q-label">Q2, What Brings You Back?</div>
+          <div class="q-text">What brings you back to a place? Select up to three.</div>
+          <div class="q-inspiration"><span class="q-inspiration-label">Inspiration:</span> "When you want to read, study, or work outside of your home/office in Madison, where do you usually go, and what is the #1 thing that ruins that experience for you or makes you leave?"</div>
+          <div class="q-rationale">Flipping to what brings you back captures a fuller picture of what people value most. Asking about the negative primes frustration; this version surfaces real loyalty drivers. Capping at three forces prioritization and makes data more actionable.</div>
+          <ul class="q-options">
+            <li>→ Food or beverage quality</li>
+            <li>→ Food or beverage selection</li>
+            <li>→ Noise level</li>
+            <li>→ Vibe and atmosphere</li>
+            <li>→ Decor & design</li>
+            <li>→ Staff knowledge</li>
+            <li>→ Staff friendliness</li>
+            <li>→ Price</li>
+            <li>→ Cleanliness</li>
+            <li>→ Kid-friendly</li>
+            <li>→ Outdoor seating</li>
+            <li>→ Comfortable seating</li>
+            <li>→ Privacy</li>
+            <li>→ Other (please specify)</li>
+          </ul>
+        </div>
+
+        <div class="q-card">
+          <div class="q-label">Q3, Travel Distance</div>
+          <div class="q-text">How far are you willing to travel regularly for a spot you love?</div>
+          <div class="q-rationale">Helps understand realistic catchment area and informs location decisions. Madison residents can be very neighborhood-loyal.</div>
+          <ul class="q-options">
+            <li>→ Within walking distance</li>
+            <li>→ Under 10 minutes</li>
+            <li>→ 10–20 minutes</li>
+            <li>→ I'd go across town</li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- SECTION 2 -->
+    <div class="section-group reveal">
+      <div class="section-group-label">Section 2 — Drinks & Caffeine Habits</div>
+      <div class="q-list">
+
+        <div class="q-card">
+          <div class="q-label">Q4, Caffeine Routine</div>
+          <div class="q-text">During a typical week, what does your caffeine routine look like?</div>
+          <div class="q-inspiration"><span class="q-inspiration-label">Inspiration:</span> "How often do you consume energy drinks or non-coffee caffeine compared to traditional coffee? (Daily, 2-3 times a week, Rarely, Nevarrr! Coffee for life!)"</div>
+          <div class="q-rationale">Separates frequency and preference, and distinguishes traditional energy drinks from plant-based, critical for understanding where the audience is today vs. where Lucky Crow takes them. Removes the humorous answer options that could skew tone and data quality.</div>
+          <ul class="q-options">
+            <li>→ Mostly coffee</li>
+            <li>→ Mostly traditional energy drinks (Red Bull, Monster, etc.)</li>
+            <li>→ Mostly plant-based energy drinks (Lotus, Guayakí, etc.)</li>
+            <li>→ Mostly tea</li>
+            <li>→ Mix of different types</li>
+            <li>→ I avoid caffeine entirely</li>
+            <li>→ Other</li>
+          </ul>
+        </div>
+
+        <div class="q-card">
+          <div class="q-label">Q5a — Plant-Based Familiarity</div>
+          <div class="q-text">Are you familiar with plant-based or botanical energy drinks, like Lotus, Guayakí, or others?</div>
+          <div class="q-rationale">Establishes baseline awareness before asking about experience. Prevents people who have never heard of these products from feeling lost on Q5b, and helps segment responses by familiarity level.</div>
+          <ul class="q-options">
+            <li>→ Yes, I know them well</li>
+            <li>→ I've heard of them but don't know much</li>
+            <li>→ No, this is new to me</li>
+          </ul>
+        </div>
+
+        <div class="q-card">
+          <div class="q-label">Q5b — Plant-Based Experience</div>
+          <div class="q-text">Have you ever tried a plant-based or botanical energy drink, like Lotus, Guayakí, or others?</div>
+          <div class="q-inspiration"><span class="q-inspiration-label">Inspiration:</span> "If you were offered a premium, plant-based energy drink (clean caffeine and added benefits), would you choose it over your standard coffee or soda/energy drink? (Definitely/No/Maybe)"</div>
+          <div class="q-rationale">The original asks a hypothetical that primes a yes. This version asks about past behavior first, which surfaces more honest signal and less social desirability bias.</div>
+          <ul class="q-options">
+            <li>→ Yes, it's a regular thing for me</li>
+            <li>→ Yes, I've tried it once or twice</li>
+            <li>→ No, but I'd be open to it</li>
+            <li>→ No, not something I'd seek out</li>
+          </ul>
+        </div>
+
+        <div class="q-card">
+          <div class="q-label">Q6, Spend & Dwell Time</div>
+          <div class="q-text">When you go somewhere to read, study, work, or meet up, what do you typically spend and how long do you usually stay?</div>
+          <div class="q-inspiration"><span class="q-inspiration-label">Inspiration:</span> "What do you typically spend each time you visit a local café/coffee shop, and how long do you usually stay?"</div>
+          <div class="q-rationale">Broadened beyond coffee shops to match the full range of places captured in Q1. Adds a $0 option for free spaces like libraries, making it relevant to the whole audience.</div>
+          <ul class="q-options">
+            <li>→ Spend: $0 / Under $5 / $5–$10 / $10–$15 / $15+</li>
+            <li>→ Time: Under 30 min / 30–60 min / 1–2 hours / 2+ hours</li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- SECTION 3 -->
+    <div class="section-group reveal">
+      <div class="section-group-label">Section 3 — Reading & Book Communities</div>
+      <div class="q-list">
+
+        <div class="q-card">
+          <div class="q-label">Q7, Reading Communities & Platforms</div>
+          <div class="q-text">Are you part of any reading communities or platforms, online or in person? Select all that apply.</div>
+          <div class="q-inspiration"><span class="q-inspiration-label">Inspiration:</span> "Are you a part of an online reading community/group (BookTok, Bookstagram, Goodreads, StoryGraph, Audible, Libby, etc.)? If so, how often do you attend local book-related events or meetups? If you don't attend any because there are none in your area that you're aware of, would you attend these kinds of events if they happened more regularly in your area?"</div>
+          <div class="q-rationale">The original combines three separate questions into one, which makes it hard to analyze. This version focuses on community membership and expands to include Reddit and Substack. Event attendance is captured separately where relevant.</div>
+          <ul class="q-options">
+            <li>→ BookTok / TikTok reading community</li>
+            <li>→ Bookstagram / Goodreads / StoryGraph</li>
+            <li>→ Audible / Libby</li>
+            <li>→ Reddit reading communities / Substack newsletters</li>
+            <li>→ Local or private book club / Library reading group</li>
+            <li>→ None</li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- SECTION 4 -->
+    <div class="section-group reveal">
+      <div class="section-group-label">Section 4 — Experience & Atmosphere</div>
+      <div class="q-list">
+
+        <div class="q-card">
+          <div class="q-label">Q8, Vibe Meter</div>
+          <div class="q-text">On a scale of 1–10, how much does the atmosphere of a place influence whether you go back?</div>
+          <div class="q-inspiration"><span class="q-inspiration-label">Inspiration:</span> "On a scale of 1-10, how much does the experience or atmosphere of a space influence your choice of where to spend your time? (1 being 'I don't even think about it' and 10 being 'I won't waste my time unless there's a vibe!')"</div>
+          <div class="q-rationale">Tightened to remove the humorous scale descriptors, which can skew responses. Focuses the question on return behavior rather than initial choice, which is more predictive. If scores skew high, that's investor-ready proof.</div>
+          <ul class="q-options">
+            <li>→ 1 = I barely notice it &nbsp;/&nbsp; 10 = It's the whole reason I go</li>
+          </ul>
+        </div>
+
+        <div class="q-card">
+          <div class="q-label">Q9, Madison Gap</div>
+          <div class="q-text">Is there a type of place or experience you wish Madison had for reading, studying, or spending time with friends?</div>
+          <div class="q-rationale">A sleeper question. Unprompted signal about a reading spot or plant-based drinks is gold for investor conversations. Open field to avoid leading.</div>
+          <ul class="q-options">
+            <li>→ Open field</li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- SECTION 5 -->
+    <div class="section-group reveal">
+      <div class="section-group-label">Section 5 — About You</div>
+      <div class="q-list">
+
+        <div class="q-card">
+          <div class="q-label">Q10, Neighborhood</div>
+          <div class="q-text">Which area do you live in or spend the most time in?</div>
+          <div class="q-rationale">Geographic clustering helps map demand by neighborhood and informs location decisions.</div>
+          <ul class="q-options neighborhood-list">
+            <li><span class="neighborhood-heading">→ Downtown/Isthmus</span><span class="neighborhood-subs">Campus, Capitol Square/Downtown, Tenney-Lapham</span></li>
+            <li><span class="neighborhood-heading">→ Campus Edge & Near West</span><span class="neighborhood-subs">Regent/Greenbush/Vilas, Dudgeon-Monroe, Crawford/Marlborough/Nakoma, Westmorland, Shorewood Hills, Midvale Heights/Hilldale</span></li>
+            <li><span class="neighborhood-heading">→ Near East Side</span><span class="neighborhood-subs">Marquette (Willy Street), Schenk-Atwood, Eken Park/Hawthorne, Grandview Commons/Far East Side, Glendale/Elvehjem</span></li>
+            <li><span class="neighborhood-heading">→ Northside</span><span class="neighborhood-subs">Sherman, Cherokee Park, Brentwood Village/Berkley Oaks, Maple Bluff</span></li>
+            <li><span class="neighborhood-heading">→ South & Far West</span><span class="neighborhood-subs">Bay Creek, South Madison, Wexford Ridge/High Point, Arbor Hills, Allied Drive, Leopold</span></li>
+            <li><span class="neighborhood-heading">→ Nearby Suburbs</span><span class="neighborhood-subs">Verona, Middleton, Fitchburg, Monona, Cottage Grove, Sun Prairie</span></li>
+            <li><span class="neighborhood-heading">→ Other (please specify)</span></li>
+          </ul>
+        </div>
+
+        <div class="q-card">
+          <div class="q-label">Q11, Age Range</div>
+          <div class="q-text">Which of the following best describes you?</div>
+          <div class="q-rationale">Validates target personas (Gen Z, Millennials, Gen X) and helps cluster responses by generation.</div>
+          <ul class="q-options">
+            <li>→ Under 18 / 18–24 / 25–34 / 35–44 / 45–54 / 55+</li>
+          </ul>
+        </div>
+
+        <div class="q-card">
+          <div class="q-label">Q12, Student Status</div>
+          <div class="q-text">Are you currently a student?</div>
+          <div class="q-rationale">Students are a core segment. Quick yes/no lets Katy segment responses without adding friction.</div>
+          <ul class="q-options">
+            <li>→ Yes / No</li>
+          </ul>
+        </div>
+
+        <div class="q-card">
+          <div class="q-label">Q13, Email Capture & Incentive</div>
+          <div class="q-text">As a thank you for completing the survey, we'd love to give you half off your first drink and a free premium sticker at our new space when it opens.</div>
+          <div class="q-rationale">Converts survey respondents into an early-access list. The incentive rewards participation and creates a reason to engage at opening.</div>
+          <ul class="q-options">
+            <li>→ Yes, sign me up (email field)</li>
+            <li>→ No thanks</li>
+            <li>→ Optional: Add me to our newsletter and event invites</li>
+          </ul>
+          <div class="q-note">Note: By providing your email address, you may also receive news updates and invitations from us.</div>
+          <div class="q-note">⚠ Confirm compliance with Wisconsin sweepstakes and incentive laws before launching.</div>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<div class="gold-rule"></div>
+
+<!-- PLATFORM RECOMMENDATION -->
+<section class="sec" id="platform" style="background: var(--bg);">
+  <div class="sec-inner">
+    <div class="sec-bar"></div>
+    <div class="sec-label">PLATFORM</div>
+    <h2 class="sec-h2 reveal">Survey selection</h2>
+    <p class="body-copy reveal">We explored multiple platforms based on the criteria we discussed.</p>
+    <div class="platform-grid reveal">
+      <div class="platform-card">
+        <div class="platform-name">Tally</div>
+        <ul>
+          <li>→ Free, unlimited forms and submissions</li>
+          <li>→ Clean, mobile-first interface with no branding on free plan</li>
+          <li>→ Native email capture, QR code generation, and conditional logic</li>
+        </ul>
+      </div>
+      <div class="platform-card">
+        <div class="platform-name">Typeform</div>
+        <ul>
+          <li>→ Conversational one-question-at-a-time format</li>
+          <li>→ ~47% avg completion rate vs 21.5% industry average</li>
+          <li>→ Free tier caps at 10 responses/month; $50/mo to remove branding</li>
+        </ul>
+      </div>
+      <div class="platform-card">
+        <div class="platform-name">SurveyMonkey</div>
+        <ul>
+          <li>→ Widely recognized and easy to use</li>
+          <li>→ Strong analytics and reporting tools</li>
+          <li>→ Free plan caps at 25 responses per survey</li>
+        </ul>
+      </div>
+      <div class="platform-card">
+        <div class="platform-name">Google Forms</div>
+        <ul>
+          <li>→ Free and unlimited responses</li>
+          <li>→ Integrates directly with Google Sheets</li>
+          <li>→ No branding options, generic appearance</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="platform-rec reveal">
+      <div class="platform-rec-label">Our recommendation:<br><span class="platform-rec-name">Tally</span></div>
+      <p>Here's why it meets our requirements:</p>
+      <ul>
+        <li>→ Unlimited responses on the free plan, no caps to worry about as distribution scales</li>
+        <li>→ Automatically switch the reward offer off after a set number of redemptions, so the incentive cap manages itself</li>
+        <li>→ Generates a shareable link natively</li>
+        <li>→ Supports all question types needed: multiple choice, scale, open field, two-part, and email capture</li>
+        <li>→ All response data exports cleanly to a spreadsheet for easy management and segmentation</li>
+        <li>→ Easy template sharing and handoff</li>
+      </ul>
+      <div style="margin-top: 24px;">
+        <p>Additional features to consider with Pro ($29/month)</p>
+        <ul>
+          <li>→ Creative flexibility to match the visual tone of the brand</li>
+          <li>→ Capturing partial submissions</li>
+          <li>→ Automated "Thank You" email</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="gold-rule"></div>
+
+<!-- AUDIENCE -->
+<section class="sec" id="audience" style="background: var(--bg-2);">
+  <div class="sec-inner">
+    <div class="sec-bar"></div>
+    <div class="sec-label">DISTRIBUTION</div>
+    <h2 class="sec-h2 reveal">The audience</h2>
+    <p class="body-copy reveal">We'll keep things manageable by targeting three relevant audiences. Together they give us the most complete picture of who's out there and what they need.</p>
+    <div class="audience-grid reveal">
+      <div class="audience-card">
+        <div class="audience-name">Book Community People</div>
+        <h4>Who they are</h4>
+        <ul>
+          <li>→ Active on BookTok, Bookstagram, Goodreads, StoryGraph</li>
+          <li>→ Katy's "BookTok Becky" persona</li>
+        </ul>
+        <h4>Where to reach them</h4>
+        <ul>
+          <li>→ TikTok/BookTok video</li>
+          <li>→ Facebook book groups Katy is already in</li>
+          <li>→ Reddit reading communities and online groups</li>
+          <li>→ Flyers at bookstores and indie shops</li>
+        </ul>
+        <h4>Why they matter</h4>
+        <ul>
+          <li>→ Most passionate early adopters, if they love it they'll tell everyone</li>
+        </ul>
+      </div>
+      <div class="audience-card">
+        <div class="audience-name">Wellness & Plant-Based</div>
+        <h4>Who they are</h4>
+        <ul>
+          <li>→ Health-conscious, ingredient-aware</li>
+          <li>→ Already drinking or curious about plant-based energy</li>
+          <li>→ Katy's "Healthy Heather" persona, likely 24–44</li>
+        </ul>
+        <h4>Where to reach them</h4>
+        <ul>
+          <li>→ Flyers at yoga/fitness studios, wellness boutiques</li>
+          <li>→ Willy Street Co-op and natural grocery</li>
+          <li>→ Reddit wellness communities and online groups</li>
+          <li>→ Social media ads targeting plant-based interests</li>
+        </ul>
+        <h4>Why they matter</h4>
+        <ul>
+          <li>→ Most likely to already know what Lotus is</li>
+        </ul>
+      </div>
+      <div class="audience-card">
+        <div class="audience-name">Third Space Regulars</div>
+        <h4>Who they are</h4>
+        <ul>
+          <li>→ Remote workers, freelancers, students</li>
+          <li>→ Habitual coffee shop / venue visitors</li>
+          <li>→ Broadest addressable audience</li>
+        </ul>
+        <h4>Where to reach them</h4>
+        <ul>
+          <li>→ Flyers left at coffee shop counters</li>
+          <li>→ Meta ads targeting remote work and coffee shop interest</li>
+          <li>→ Willy Street, Atwood, Monroe Street corridor</li>
+        </ul>
+        <h4>Why they matter</h4>
+        <ul>
+          <li>→ Don't need convincing, Q9 Madison Gap will land hardest here</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="gold-rule"></div>
+
+<!-- DISTRIBUTION -->
+<section class="sec" id="distribution" style="background: var(--bg);">
+  <div class="sec-inner">
+    <div class="sec-bar"></div>
+    <div class="sec-label">DISTRIBUTION</div>
+    <h2 class="sec-h2 reveal">Getting in front of people</h2>
+    <p class="body-copy reveal">We recommend promoting the survey through three core channels. There are also opportunities to expand reach through paid social and gather more information by visiting online communities.</p>
+
+    <div class="dist-list reveal">
+
+      <div class="dist-item">
+        <span class="dist-num">01</span>
+        <div class="dist-text">
+          <strong>Guerrilla Flyers</strong>
+          <ul>
+            <li>→ One hook, one image, one big QR code</li>
+            <li>→ Target: State Street, University Ave, Willy Street, Atwood, Monroe Street, coffee shops, yoga studios, bookstores, Willy Street Co-op</li>
+            <li>→ 2–3 versions: Lotus hook for wellness crowd, book/reading hook for BookTok crowd</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="dist-item">
+        <span class="dist-num">02</span>
+        <div class="dist-text">
+          <strong>Facebook Book Community Groups</strong>
+          <ul>
+            <li>→ Katy is already a member of several groups with 50,000+ members</li>
+            <li>→ Post as a community member, not a brand</li>
+            <li>→ Try a native poll first as a softer entry point before dropping the survey link</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="dist-item">
+        <span class="dist-num">03</span>
+        <div class="dist-text">
+          <strong>TikTok / BookTok</strong>
+          <ul>
+            <li>→ Short, authentic video from Katy, 30 seconds, genuine and personal</li>
+            <li>→ Survey link in bio</li>
+            <li>→ Authentic works better than polished on TikTok</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="dist-item">
+        <span class="dist-num">04</span>
+        <div class="dist-text">
+          <strong>Paid Social (optional)</strong>
+          <ul>
+            <li>→ Facebook likely outperforms Instagram for the 25–44 demographic and book/wellness interest groups</li>
+            <li>→ Start with a small test budget of $25–$50 before scaling</li>
+            <li>→ Target by interest: books, reading, plant-based lifestyle, wellness, Madison WI</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="dist-item">
+        <span class="dist-num">05</span>
+        <div class="dist-text">
+          <strong>Online Communities (research only)</strong>
+          <ul>
+            <li>→ Reddit Madison is active but rejects promotional posts, don't drop the link directly</li>
+            <li>→ Use Reddit and online groups to read sentiment about third spaces and coffee shops in Madison</li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="stack-box reveal">
+      <h3>Recommended distribution stack</h3>
+      <ul>
+        <li>→ Channel 1: Guerrilla flyers with QR codes in target neighborhoods (2–3 versions)</li>
+        <li>→ Channel 2: Facebook book community groups, organic posts by Katy as community member</li>
+        <li>→ Channel 3: TikTok/BookTok, short authentic video from Katy</li>
+        <li>→ Channel 4: (optional) Paid social ad, small test budget, Facebook-first</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<div class="gold-rule"></div>
+
+<!-- INCENTIVE -->
+<section class="sec" id="incentive" style="background: var(--bg-2);">
+  <div class="sec-inner">
+    <div class="sec-bar"></div>
+    <div class="sec-label">INCENTIVE & REDEMPTION</div>
+    <h2 class="sec-h2 reveal">Making it worth their time</h2>
+    <p class="body-copy reveal">The incentive does two jobs: rewards participation now, creates a reason to walk through the door when Lucky Crow opens.</p>
+
+    <div class="target-nums reveal">
+      <div class="target-num">
+        <div class="big">100</div>
+        <div class="label">Shows early interest</div>
+      </div>
+      <div class="target-num goal-box">
+        <div class="goal-label">Goal</div>
+        <div class="big">250</div>
+        <div class="label">Statistically meaningful</div>
+      </div>
+      <div class="target-num">
+        <div class="big">500+</div>
+        <div class="label">Genuinely impressive</div>
+      </div>
+    </div>
+
+    <div class="incentive-grid reveal" style="margin-top: 32px;">
+      <div class="incentive-card">
+        <h3>The offer</h3>
+        <ul>
+          <li>→ Fifty percent off first drink at Lucky Crow</li>
+          <li>→ Free premium sticker</li>
+          <li>→ Delivered via Tally thank-you email after submission</li>
+          <li>→ Optional newsletter opt-in kept separate</li>
+        </ul>
+      </div>
+      <div class="incentive-card">
+        <h3>Redemption process</h3>
+        <div class="redemption-note">Free, no tech setup, works on any phone or tablet.</div>
+        <ol class="redemption-steps">
+          <li>Export all survey respondents from Tally into Google Sheets</li>
+          <li>Staff searches customer email at time of visit</li>
+          <li>Staff marks coupon and sticker as redeemed</li>
+        </ol>
+        <div class="dist-note" style="margin-top: 12px;">⚠ Coupon cap decision pending, Katy to confirm 250 or 500. Once cap is hit, thank-you message changes to early access list language.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="gold-rule"></div>
+
+<!-- NEXT STEPS -->
+<section class="sec" id="next-steps" style="background: var(--bg);">
+  <div class="sec-inner">
+    <div class="sec-bar"></div>
+    <div class="sec-label">NEXT STEPS</div>
+    <h2 class="sec-h2 reveal">What happens now</h2>
+
+    <div class="nextsteps-group reveal">
+      <div class="nextsteps-label">Pending</div>
+      <ul class="nextsteps-list">
+        <li>→ Lock in the survey questions</li>
+        <li>→ Confirm survey platform (Tally)</li>
+        <li>→ Confirm the three audience groups</li>
+        <li>→ Confirm distribution plan</li>
+        <li>→ Confirm redemption cap</li>
+        <li>→ Determine neighborhoods to include in Q10</li>
+      </ul>
+    </div>
+
+    <div class="nextsteps-group reveal">
+      <div class="nextsteps-label">Up next</div>
+      <ul class="nextsteps-list">
+        <li>→ Build and design the survey form</li>
+        <li>→ Confirm posting compliance for flyers and online platforms</li>
+        <li>→ Print and distribute flyers</li>
+        <li>→ Create messaging and content posts for promoting the survey</li>
+      </ul>
+    </div>
+
+  </div>
+</section>
+
+
     </div>
   </div>
 </div>
-
 <script>
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
   }, { threshold: 0.1 });
   document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+  function openLightbox(src) {
+    document.getElementById('lightbox-img').src = src;
+    document.getElementById('lightbox').classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeLightbox() {
+    document.getElementById('lightbox').classList.remove('open');
+    document.body.style.overflow = '';
+  }
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') closeLightbox();
+  });
 </script>
 </body>
 </html>
