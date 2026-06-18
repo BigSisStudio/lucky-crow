@@ -57,7 +57,7 @@
 
   /* HERO */
   .hero {
-    min-height: 52vh;
+    min-height: calc(100vh - 68px);
     background: #2a1545;
     background-image:
       linear-gradient(135deg, #3b1d5e 0%, #2a1545 40%, #1e1038 70%, #150b2e 100%),
@@ -222,12 +222,15 @@
 
 <!-- HERO -->
 <section class="hero">
-  <div class="hero-inner" style="grid-template-columns: 1fr; max-width: 800px;">
+  <div class="hero-inner">
     <div class="hero-text">
       <div class="hero-label">Big Sis Creative Studio × Lucky Crow</div>
       <h1 class="hero-h1">Your logo has real bones. Let's talk about the system.</h1>
       <p class="hero-sub">A structured look at what's working, what isn't, and what it takes to make the mark do its job everywhere it needs to.</p>
       <div class="hero-meta">Brand Identity Review &nbsp;·&nbsp; 06.2026</div>
+    </div>
+    <div class="hero-logo-col">
+      <img src="LuckyCrow_logo_color.png" alt="Lucky Crow logo — color version">
     </div>
   </div>
 </section>
@@ -243,11 +246,11 @@
     <p class="sec-intro">Every logo goes through the same five areas of evaluation — not style opinions, but functional checks based on common principles for how marks actually perform in the real world. Merch, signage, digital, print, one-color reproduction. A logo has to work across all of them.</p>
 
     <ul class="test-list">
-      <li><strong>Legibility</strong> — Does it read at every size it'll actually be used?</li>
-      <li><strong>Simplification</strong> — Does the core mark survive in flat black, single color, and at small scale?</li>
-      <li><strong>Intentionality</strong> — Does it hold together as a designed thing, or does it read as assembled?</li>
-      <li><strong>Memory</strong> — Could someone describe the essential mark after seeing it once?</li>
-      <li><strong>Belonging</strong> — Does it feel true to this specific brand, and only this brand?</li>
+      <li><strong>Legibility</strong> — Can you read it everywhere it needs to be read?</li>
+      <li><strong>Simplification</strong> — What survives when you strip it down — and does that core travel?</li>
+      <li><strong>Art or Error</strong> — Does it hold together as a designed thing, or does it read as assembled?</li>
+      <li><strong>Memory</strong> — Could someone reproduce the essence of this after seeing it once?</li>
+      <li><strong>Belonging</strong> — Does it feel true to this specific brand — and only this brand?</li>
     </ul>
 
     <div class="sec-label" style="margin-top: 40px; margin-bottom: 16px;">Lucky Crow results</div>
@@ -270,7 +273,7 @@
       </div>
       <div class="score-pill fail">
         <span class="score-pill-label">Fail</span>
-        <span class="score-pill-name">Intentionality</span>
+        <span class="score-pill-name">Art or Error</span>
       </div>
     </div>
   </div>
@@ -326,23 +329,23 @@
         <span class="test-badge fail">Fail</span>
         <div>
           <div class="test-title">Legibility</div>
-          <div class="test-question">Can it be read everywhere it needs to be read?</div>
+          <div class="test-question">Can you read it everywhere it needs to be read?</div>
         </div>
       </div>
       <div class="finding-grid">
         <div class="finding-card fail-card">
-          <div class="finding-card-label">The business problem</div>
+          <div class="finding-card-label">Where it breaks down</div>
           <ul class="finding-list">
-            <li>At business card scale, the name "Lucky Crow" requires the logo to fill the entire card to read. That's not a logo spec — that's a production problem.</li>
+            <li>The brand name doesn't read at 1" wide in print or 80px wide on screen. At business card scale, the logo would need to fill the entire card to be legible — that's a production problem, not a logo spec.</li>
             <li>"Apothecary & Readeasy" — the two descriptors that tell people what Lucky Crow actually is — disappear completely below 2" wide. They're doing real brand work and they're functionally invisible at most standard sizes.</li>
-            <li>The fine white detail strokes throughout the crow body drop below 2mm at standard sizes. Embroidery and screen print at left-chest scale are not viable without a redesign.</li>
-            <li>The gold does not pass ADA digital contrast compliance against the dark background. It will fail accessibility checks on the website and in digital applications.</li>
+            <li>Fine white detail strokes throughout the crow body drop below 2mm at standard sizes. That's the physical minimum a needle and thread can reproduce — embroidery is off the table in the current state.</li>
+            <li>The gold does not pass ADA digital contrast compliance against the dark background. It will fail accessibility checks in digital applications.</li>
           </ul>
         </div>
         <div class="finding-card pass-card">
-          <div class="finding-card-label">What's actually fine</div>
+          <div class="finding-card-label">What's working</div>
           <ul class="finding-list">
-            <li>Fully vector — no raster elements. Good foundation to work from.</li>
+            <li>Fully vector — no raster elements. Clean foundation to build from.</li>
             <li>Color count is controlled. The palette isn't the problem here.</li>
           </ul>
         </div>
@@ -355,50 +358,49 @@
         <span class="test-badge fail">Fail</span>
         <div>
           <div class="test-title">Simplification</div>
-          <div class="test-question">What survives in flat black — and does that core travel?</div>
+          <div class="test-question">What survives when you strip it down — and does that core travel?</div>
         </div>
       </div>
       <div class="finding-grid">
         <div class="finding-card fail-card">
-          <div class="finding-card-label">The business problem</div>
+          <div class="finding-card-label">Where it breaks down</div>
           <ul class="finding-list">
-            <li>The crow illustration relies entirely on black/white stroke contrast to read as a bird. Remove color, and the concept doesn't hold — it reads as a solid shape.</li>
-            <li>The lotus section has no simplified path. Embroidery, stamps, and one-color reproduction are not viable without a redesign.</li>
-            <li>No simplified icon version exists. One mark is being asked to do every job across every context. That's too much load for one asset.</li>
+            <li>The crow illustration relies on black/white stroke contrast to read as a bird. Reproduce it in flat black and the concept doesn't hold — it reads as a solid shape. A mark that only works in full color isn't a logo, it's a color-dependent illustration.</li>
+            <li>The lotus has no simplified path. Embroidery, stamps, and one-color reproduction aren't viable without a redesign.</li>
+            <li>No simplified icon version exists. The full mark is being asked to do every job across every context — small sizes, merch, social profiles, favicon. That's too much load for one asset.</li>
           </ul>
         </div>
         <div class="finding-card pass-card">
           <div class="finding-card-label">The seed of something good</div>
           <ul class="finding-list">
-            <li>The crow silhouette and moon arc are a strong compositional anchor. In concept, this is an ownable core mark. The simplification work is about unlocking what's already there.</li>
+            <li>The crow and moon composition is a strong anchor. In concept, this is ownable. The simplification work isn't about removing anything — it's about unlocking what's already there.</li>
           </ul>
         </div>
       </div>
     </div>
 
-    <!-- TEST 3: INTENTIONALITY -->
+    <!-- TEST 3: ART OR ERROR -->
     <div class="test-block reveal">
       <div class="test-header">
         <span class="test-badge fail">Fail</span>
         <div>
-          <div class="test-title">Intentionality</div>
+          <div class="test-title">Art or Error</div>
           <div class="test-question">Does it hold together as a designed thing?</div>
         </div>
       </div>
       <div class="finding-grid">
         <div class="finding-card fail-card">
-          <div class="finding-card-label">The business problem</div>
+          <div class="finding-card-label">Where it breaks down</div>
           <ul class="finding-list">
-            <li>The business name is the most important piece of information in any logo. Right now it's the hardest thing to find. Hierarchy is inverted — the crow dominates, the name disappears.</li>
-            <li>The crow and the lotus are drawn in different visual registers. Different line weights, different levels of stylization, different attitudes. They're sharing a frame without speaking the same language — the mark reads as assembled rather than designed.</li>
-            <li>The crow illustration sits between "real craft illustration" and "graphic mark" and fully achieves neither. It needs to commit to one direction. Either go detailed enough to read as intentional craft, or simplified enough to function as a bold graphic symbol.</li>
-            <li>This is the one that will cost trust with your audience. People in this space have taste. They'll feel the imbalance even if they can't name it.</li>
+            <li>The business name is the most important piece of information in any logo. Right now it's the hardest thing to find. The crow dominates; the name gets buried. Hierarchy is inverted.</li>
+            <li>The crow and the lotus are drawn in different visual registers — different line weights, different levels of stylization, different attitudes. They're sharing a frame without speaking the same language. The mark reads as assembled rather than designed.</li>
+            <li>The crow sits between "real craft illustration" and "graphic mark" without fully committing to either. That middle ground is where the mark loses credibility. The audience in this space has taste — they'll feel it even if they can't name it.</li>
           </ul>
         </div>
         <div class="finding-card pass-card">
           <div class="finding-card-label">The intention is clear</div>
           <ul class="finding-list">
-            <li>Every element earns its place conceptually. The crow, the moon, the lotus — this isn't random. It's a coherent visual world that just needs its elements to align in execution.</li>
+            <li>Every element earns its place conceptually. The crow, the moon, the lotus — this isn't random. It's a coherent visual world that needs its elements to align in execution, not a different concept.</li>
             <li>Mystical, nature-rooted, slightly literary — the direction is right and the palette supports it consistently.</li>
           </ul>
         </div>
