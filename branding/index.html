@@ -141,7 +141,7 @@
   .finding-list li::before { content: "→ "; color: var(--gold); }
 
   /* SCALE DEMO */
-  .scale-demo { background: var(--bg-2); border: 1px solid var(--rule); border-radius: 2px; padding: 40px; margin: 32px 0; }
+  .scale-demo { background: transparent; border: none; padding: 40px 0; margin: 32px 0; }
   .scale-demo-label { font-family: var(--ff-body); font-size: 11px; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: var(--text-dim); margin-bottom: 32px; }
   .scale-row { display: flex; align-items: flex-end; gap: 48px; flex-wrap: wrap; }
   .scale-item { display: flex; flex-direction: column; align-items: center; gap: 16px; }
@@ -420,7 +420,7 @@
     <p class="sec-intro">This is where abstract findings become visible. The same logo, at the sizes it will actually be used.</p>
 
     <!-- Color version at scale -->
-    <div class="scale-demo" style="background: var(--bg-2);">
+    <div class="scale-demo">
       <div class="scale-demo-label">Color version — full mark</div>
       <div class="scale-row">
         <div class="scale-item">
@@ -442,7 +442,7 @@
     </div>
 
     <!-- Outline version at scale -->
-    <div class="scale-demo" style="margin-top: 16px; background: var(--bg-2);">
+    <div class="scale-demo" style="margin-top: 16px;">
       <div class="scale-demo-label">Outline / reduced color version — as provided</div>
       <div class="scale-row">
         <div class="scale-item">
