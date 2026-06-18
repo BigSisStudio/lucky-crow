@@ -57,7 +57,7 @@
 
   /* HERO */
   .hero {
-    min-height: calc(100vh - 68px);
+    min-height: 52vh;
     background: #2a1545;
     background-image:
       linear-gradient(135deg, #3b1d5e 0%, #2a1545 40%, #1e1038 70%, #150b2e 100%),
@@ -81,9 +81,9 @@
     color: var(--white); line-height: 1.05; margin-bottom: 28px;
   }
   .hero-sub {
-    font-family: var(--ff-display); font-style: italic;
-    font-size: clamp(18px, 2vw, 24px);
-    color: var(--text-mid); line-height: 1.5; margin-bottom: 32px;
+    font-family: var(--ff-body);
+    font-size: clamp(16px, 1.8vw, 20px);
+    color: var(--text-mid); line-height: 1.7; margin-bottom: 32px;
   }
   .hero-meta { color: var(--text-dim); font-family: var(--ff-body); font-size: 15px; letter-spacing: .04em; }
   .hero-logo-col { display: flex; align-items: center; justify-content: center; }
@@ -111,7 +111,7 @@
   .sec-bar { width: 48px; height: 3px; background: var(--gold); margin-bottom: 16px; }
   .sec-label { font-family: var(--ff-body); font-size: 11px; letter-spacing: .16em; text-transform: uppercase; font-weight: 700; color: var(--text-dim); margin-bottom: 12px; }
   .sec-h2 { font-family: var(--ff-display); font-weight: 700; font-size: clamp(30px, 4.5vw, 50px); line-height: 1.15; color: var(--text); margin-bottom: 16px; }
-  .sec-intro { font-family: var(--ff-display); font-style: italic; font-size: 20px; line-height: 1.65; color: var(--text-mid); margin-bottom: 40px; letter-spacing: -0.01em; }
+  .sec-intro { font-family: var(--ff-body); font-style: normal; font-size: 17px; line-height: 1.8; color: var(--text-mid); margin-bottom: 40px; border-left: 3px solid var(--rule-gold); padding-left: 20px; }
   .gold-rule { width: 100%; height: 1px; background: var(--rule-gold); }
 
   /* TEST BLOCKS */
@@ -149,10 +149,16 @@
   .scale-item-note { font-family: var(--ff-body); font-size: 11px; color: var(--fail-text); text-align: center; font-style: italic; max-width: 120px; }
   .scale-item-note.ok { color: var(--pass-text); }
 
+  /* TEST LIST */
+  .test-list { list-style: none; display: flex; flex-direction: column; gap: 14px; margin-top: 8px; }
+  .test-list li { font-family: var(--ff-body); font-size: 16px; line-height: 1.7; color: var(--text-mid); padding-left: 1.4em; text-indent: -1.4em; }
+  .test-list li::before { content: "→ "; color: var(--gold); }
+  .test-list li strong { color: var(--text); font-weight: 700; }
+
   /* BOTTOM LINE */
   .bottom-line { background: var(--bg-3); border: 1px solid var(--rule); border-top: 3px solid var(--gold); border-radius: 2px; padding: 36px 40px; margin-top: 40px; }
   .bottom-line-label { font-family: var(--ff-body); font-size: 11px; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: var(--gold); margin-bottom: 16px; }
-  .bottom-line p { font-family: var(--ff-display); font-style: italic; font-size: 20px; line-height: 1.7; color: var(--text-mid); letter-spacing: -0.01em; }
+  .bottom-line p { font-family: var(--ff-body); font-size: 17px; line-height: 1.8; color: var(--text-mid); }
 
   /* PATH FORWARD */
   .path-list { display: flex; flex-direction: column; gap: 0; margin-top: 8px; }
@@ -162,7 +168,7 @@
   .path-text strong { font-family: var(--ff-body); font-size: 18px; font-weight: 700; color: var(--text); display: block; margin-bottom: 10px; }
   .path-text p { font-family: var(--ff-body); font-size: 16px; line-height: 1.7; color: var(--text-mid); }
 
-  .callout-closing { margin-top: 48px; font-family: var(--ff-display); font-style: italic; font-size: 22px; line-height: 1.7; color: var(--text-mid); border-left: 3px solid var(--gold); padding-left: 24px; letter-spacing: -0.01em; }
+  .callout-closing { margin-top: 48px; font-family: var(--ff-body); font-size: 18px; line-height: 1.8; color: var(--text-mid); border-left: 3px solid var(--gold); padding-left: 24px; }
 
   /* STEPS TABLE */
   .steps-table { width: 100%; border-collapse: collapse; margin-top: 40px; }
@@ -216,38 +222,12 @@
 
 <!-- HERO -->
 <section class="hero">
-  <div class="hero-inner">
+  <div class="hero-inner" style="grid-template-columns: 1fr; max-width: 800px;">
     <div class="hero-text">
       <div class="hero-label">Big Sis Creative Studio × Lucky Crow</div>
       <h1 class="hero-h1">Your logo has real bones. Let's talk about the system.</h1>
       <p class="hero-sub">A structured look at what's working, what isn't, and what it takes to make the mark do its job everywhere it needs to.</p>
       <div class="hero-meta">Brand Identity Review &nbsp;·&nbsp; 06.2026</div>
-
-      <div class="scorecard">
-        <div class="score-pill pass">
-          <span class="score-pill-label">Pass</span>
-          <span class="score-pill-name">Memory</span>
-        </div>
-        <div class="score-pill pass">
-          <span class="score-pill-label">Pass</span>
-          <span class="score-pill-name">Belonging</span>
-        </div>
-        <div class="score-pill fail">
-          <span class="score-pill-label">Fail</span>
-          <span class="score-pill-name">Legibility</span>
-        </div>
-        <div class="score-pill fail">
-          <span class="score-pill-label">Fail</span>
-          <span class="score-pill-name">Simplification</span>
-        </div>
-        <div class="score-pill fail">
-          <span class="score-pill-label">Fail</span>
-          <span class="score-pill-name">Intentionality</span>
-        </div>
-      </div>
-    </div>
-    <div class="hero-logo-col">
-      <img src="LuckyCrow_logo_color.png" alt="Lucky Crow logo — color version">
     </div>
   </div>
 </section>
@@ -259,9 +239,40 @@
   <div class="sec-inner reveal">
     <div class="sec-bar"></div>
     <div class="sec-label">How we looked at it</div>
-    <h2 class="sec-h2">The Big Sis 5-Test Framework</h2>
-    <p class="sec-intro">Every logo we evaluate goes through the same five tests. Not style opinions — functional checks against how logos actually get used in the real world. Merch, signage, digital, print, embroidery. The mark has to work in all of them.</p>
-    <p style="font-family: var(--ff-body); font-size: 16px; line-height: 1.8; color: var(--text-mid);">The five tests: <strong style="color: var(--text);">Legibility</strong> (does it read at every size it'll actually be used?), <strong style="color: var(--text);">Simplification</strong> (does the core mark survive in flat black?), <strong style="color: var(--text);">Intentionality</strong> (does it hold together as a designed thing?), <strong style="color: var(--text);">Memory</strong> (could someone describe it after one look?), and <strong style="color: var(--text);">Belonging</strong> (does it feel true to this brand and only this brand?). Lucky Crow passed two of the five. The two that matter most for concept — and failed the three that matter most for function.</p>
+    <h2 class="sec-h2">Logo Evaluation Framework</h2>
+    <p class="sec-intro">Every logo goes through the same five areas of evaluation — not style opinions, but functional checks based on common principles for how marks actually perform in the real world. Merch, signage, digital, print, one-color reproduction. A logo has to work across all of them.</p>
+
+    <ul class="test-list">
+      <li><strong>Legibility</strong> — Does it read at every size it'll actually be used?</li>
+      <li><strong>Simplification</strong> — Does the core mark survive in flat black, single color, and at small scale?</li>
+      <li><strong>Intentionality</strong> — Does it hold together as a designed thing, or does it read as assembled?</li>
+      <li><strong>Memory</strong> — Could someone describe the essential mark after seeing it once?</li>
+      <li><strong>Belonging</strong> — Does it feel true to this specific brand, and only this brand?</li>
+    </ul>
+
+    <div class="sec-label" style="margin-top: 40px; margin-bottom: 16px;">Lucky Crow results</div>
+    <div class="scorecard">
+      <div class="score-pill pass">
+        <span class="score-pill-label">Pass</span>
+        <span class="score-pill-name">Memory</span>
+      </div>
+      <div class="score-pill pass">
+        <span class="score-pill-label">Pass</span>
+        <span class="score-pill-name">Belonging</span>
+      </div>
+      <div class="score-pill fail">
+        <span class="score-pill-label">Fail</span>
+        <span class="score-pill-name">Legibility</span>
+      </div>
+      <div class="score-pill fail">
+        <span class="score-pill-label">Fail</span>
+        <span class="score-pill-name">Simplification</span>
+      </div>
+      <div class="score-pill fail">
+        <span class="score-pill-label">Fail</span>
+        <span class="score-pill-name">Intentionality</span>
+      </div>
+    </div>
   </div>
 </section>
 
