@@ -227,6 +227,11 @@
   #lightbox-img { max-height: 90vh; max-width: 90vw; width: auto; height: auto; border-radius: 2px; }
 
   .flyer-note { font-family: var(--ff-body); font-size: 13px; color: var(--text-dim); font-style: italic; margin-top: 20px; }
+  .pdf-download { margin-top: 32px; display: flex; flex-direction: column; align-items: flex-start; gap: 8px; }
+  .pdf-btn { display: inline-flex; align-items: center; gap: 10px; background: var(--lotus); color: #fff; font-family: var(--ff-body); font-size: 15px; font-weight: 600; letter-spacing: .04em; padding: 14px 24px; text-decoration: none; transition: opacity .2s; }
+  .pdf-btn:hover { opacity: 0.85; }
+  .pdf-icon { font-size: 18px; font-weight: 700; }
+  .pdf-note { font-family: var(--ff-body); font-size: 12px; color: var(--text-dim); letter-spacing: .06em; text-transform: uppercase; margin: 0; }
 
   .archive-header-bar { background: var(--crow); padding: 24px 40px 0; border-top: 1px solid var(--rule-gold); }
   .archive-header-label { font-family: var(--ff-body); font-size: 14px; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: var(--text-mid); }
@@ -338,18 +343,25 @@
     <div class="flyer-grid reveal">
       <div class="flyer-card">
         <div class="flyer-label">Reading</div>
-        <img src="LuckyCrow_SurveyFliers_v1_BSCS-03.png" alt="Reading Hideaway flyer" class="flyer-thumb" onclick="openLightbox(this.src)">
+        <img src="LuckyCrow_SurveyFliers_READING.png" alt="Reading Hideaway flyer" class="flyer-thumb" onclick="openLightbox(this.src)">
       </div>
       <div class="flyer-card">
         <div class="flyer-label">Wellness</div>
-        <img src="LuckyCrow_SurveyFliers_v1_BSCS-02.png" alt="Plant-Powered Drink Experience flyer" class="flyer-thumb" onclick="openLightbox(this.src)">
+        <img src="LuckyCrow_SurveyFliers_WELLNESS.png" alt="Plant-Powered Drink Experience flyer" class="flyer-thumb" onclick="openLightbox(this.src)">
       </div>
       <div class="flyer-card">
         <div class="flyer-label">Third Space</div>
-        <img src="LuckyCrow_SurveyFliers_v1_BSCS-01.png" alt="A Space to Work, Read & Escape flyer" class="flyer-thumb" onclick="openLightbox(this.src)">
+        <img src="LuckyCrow_SurveyFliers_THIRDSPACES.png" alt="A Space to Work, Read & Escape flyer" class="flyer-thumb" onclick="openLightbox(this.src)">
       </div>
     </div>
-    <p class="flyer-note reveal">Borders may need to be modified depending on printing technique.</p>
+    <p class="flyer-note reveal">Borders may be modified depending on printing technique.</p>
+
+    <div class="pdf-download reveal">
+      <a href="https://drive.google.com/file/d/1zQKwSbrI7OVVwfLnt564dfPOQZHnEsdS/view?usp=sharing" target="_blank" class="pdf-btn">
+        <span class="pdf-icon">↓</span> Download print-ready PDF
+      </a>
+      <p class="pdf-note">All three flyers · print-ready</p>
+    </div>
 
     <!-- LIGHTBOX -->
     <div id="lightbox" onclick="closeLightbox()">
