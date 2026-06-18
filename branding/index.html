@@ -50,9 +50,9 @@
     backdrop-filter: blur(12px);
     border-bottom: 1px solid var(--rule);
   }
-  .nav-project { font-family: var(--ff-body); font-size: 16px; font-weight: 600; color: var(--text-mid); }
+  .nav-project { font-family: var(--ff-display); font-size: 16px; font-weight: 600; font-style: italic; color: var(--text-mid); }
   .nav-links { display: flex; gap: 28px; }
-  .nav-links a { font-family: var(--ff-body); font-size: 15px; color: var(--text-mid); text-decoration: none; transition: color .2s; }
+  .nav-links a { font-family: var(--ff-display); font-size: 15px; font-style: italic; color: var(--text-mid); text-decoration: none; transition: color .2s; }
   .nav-links a:hover { color: var(--gold); }
 
   /* HERO */
@@ -210,6 +210,7 @@
     <a href="#findings">Findings</a>
     <a href="#scale">At scale</a>
     <a href="#path">Path forward</a>
+    <a href="#iterations">Iterations</a>
   </div>
 </nav>
 
@@ -293,7 +294,7 @@
 
     <div class="bottom-line">
       <div class="bottom-line-label">The signal in the data</div>
-      <p>The lower half of the mark — the lotus, the band, the stars — doesn't survive in memory. Which tells you something useful: the crow and moon are the real mark. Everything else is supporting cast. The system should be built around that.</p>
+      <p>Every element in this mark is there for a reason. The crow, the moon, the lotus (those lotus drinks are not an accident), the name. The concept is right. What the data is telling us is that the elements aren't yet in visual conversation with each other — they're sharing a frame without speaking the same language. That's a fixable execution problem, not a concept problem.</p>
     </div>
   </div>
 </section>
@@ -321,10 +322,10 @@
         <div class="finding-card fail-card">
           <div class="finding-card-label">The business problem</div>
           <ul class="finding-list">
-            <li>At business card scale, the name "Lucky Crow" requires the logo to fill the entire card to read. That's not a logo spec — that's a sign something is off.</li>
-            <li>The decorative bottom text ("Apothecary & Readeasy") disappears completely below 2" wide. Gone.</li>
-            <li>The fine white detail strokes throughout the crow body drop below 2mm at standard sizes — embroidery and screen print at left-chest scale would need a full redesign to work.</li>
-            <li>The gold color does not pass ADA digital contrast compliance against the dark background. It will fail accessibility checks on the website and digital applications.</li>
+            <li>At business card scale, the name "Lucky Crow" requires the logo to fill the entire card to read. That's not a logo spec — that's a production problem.</li>
+            <li>"Apothecary & Readeasy" — the two descriptors that tell people what Lucky Crow actually is — disappear completely below 2" wide. They're doing real brand work and they're functionally invisible at most standard sizes.</li>
+            <li>The fine white detail strokes throughout the crow body drop below 2mm at standard sizes. Embroidery and screen print at left-chest scale are not viable without a redesign.</li>
+            <li>The gold does not pass ADA digital contrast compliance against the dark background. It will fail accessibility checks on the website and in digital applications.</li>
           </ul>
         </div>
         <div class="finding-card pass-card">
@@ -377,17 +378,17 @@
         <div class="finding-card fail-card">
           <div class="finding-card-label">The business problem</div>
           <ul class="finding-list">
-            <li>The business name is the most important piece of information in any logo. It's the hardest thing to find and read here. The crow dominates; the name gets buried.</li>
-            <li>The crow reads as stock illustration — not as something drawn with specific intention for Lucky Crow. The level of detail sits between "real illustration" and "graphic mark" and achieves neither.</li>
-            <li>The lotus has the same problem. Two motifs that don't yet speak to each other visually — the mark reads as assembled rather than designed.</li>
-            <li>This is the one that will cost you trust with your audience. People in this space have taste. They'll feel it even if they can't name it.</li>
+            <li>The business name is the most important piece of information in any logo. Right now it's the hardest thing to find. Hierarchy is inverted — the crow dominates, the name disappears.</li>
+            <li>The crow and the lotus are drawn in different visual registers. Different line weights, different levels of stylization, different attitudes. They're sharing a frame without speaking the same language — the mark reads as assembled rather than designed.</li>
+            <li>The crow illustration sits between "real craft illustration" and "graphic mark" and fully achieves neither. It needs to commit to one direction. Either go detailed enough to read as intentional craft, or simplified enough to function as a bold graphic symbol.</li>
+            <li>This is the one that will cost trust with your audience. People in this space have taste. They'll feel the imbalance even if they can't name it.</li>
           </ul>
         </div>
         <div class="finding-card pass-card">
           <div class="finding-card-label">The intention is clear</div>
           <ul class="finding-list">
-            <li>Mystical, celestial, nature-rooted — the visual direction makes sense and the palette supports it consistently.</li>
-            <li>The naming and the mark are in conversation. Lucky Crow and the crow/moon imagery are aligned in concept.</li>
+            <li>Every element earns its place conceptually. The crow, the moon, the lotus — this isn't random. It's a coherent visual world that just needs its elements to align in execution.</li>
+            <li>Mystical, nature-rooted, slightly literary — the direction is right and the palette supports it consistently.</li>
           </ul>
         </div>
       </div>
@@ -407,7 +408,7 @@
 
     <!-- Color version at scale -->
     <div class="scale-demo">
-      <div class="scale-demo-label">Color version</div>
+      <div class="scale-demo-label">Color version — full mark</div>
       <div class="scale-row">
         <div class="scale-item">
           <img src="LuckyCrow_logo_color.png" style="width: 320px; height: auto;" alt="Lucky Crow logo at full size">
@@ -417,37 +418,37 @@
         <div class="scale-item">
           <img src="LuckyCrow_logo_color.png" style="width: 160px; height: auto;" alt="Lucky Crow logo at business card size">
           <div class="scale-item-label">~160px<br>Business card / web header</div>
-          <div class="scale-item-note">Name starts to compress. Bottom text unreadable.</div>
+          <div class="scale-item-note">Name compresses. Subtext gone. Stars collapse.</div>
         </div>
         <div class="scale-item">
           <img src="LuckyCrow_logo_color.png" style="width: 64px; height: auto;" alt="Lucky Crow logo at icon size">
           <div class="scale-item-label">64px<br>Favicon / app icon</div>
-          <div class="scale-item-note">Name gone. Stars collapse to noise. Only the crow silhouette survives — barely.</div>
+          <div class="scale-item-note">Name gone. Only a rough crow shape survives. Not viable.</div>
         </div>
       </div>
     </div>
 
-    <!-- B&W version at scale -->
+    <!-- Outline version at scale -->
     <div class="scale-demo" style="margin-top: 16px;">
-      <div class="scale-demo-label">One-color version (as provided) — this is not true flat black</div>
+      <div class="scale-demo-label">Outline / reduced color version — as provided</div>
       <div class="scale-row">
         <div class="scale-item">
-          <img src="LuckyCrow_logo_bw.png" style="width: 320px; height: auto; background: #1a1535; padding: 24px; border-radius: 2px;" alt="Lucky Crow logo one-color version at full size">
+          <img src="LuckyCrow_logo_bw.png" style="width: 320px; height: auto;" alt="Lucky Crow outline logo at full size">
           <div class="scale-item-label">Full size</div>
-          <div class="scale-item-note ok">Readable — but relies on the dark background to work</div>
+          <div class="scale-item-note ok">Readable at this scale on light backgrounds</div>
         </div>
         <div class="scale-item">
-          <img src="LuckyCrow_logo_bw.png" style="width: 160px; height: auto; background: #1a1535; padding: 16px; border-radius: 2px;" alt="Lucky Crow logo one-color version at business card size">
+          <img src="LuckyCrow_logo_bw.png" style="width: 160px; height: auto;" alt="Lucky Crow outline logo at business card size">
           <div class="scale-item-label">~160px</div>
-          <div class="scale-item-note">Fine detail strokes start to disappear. Lotus reads as blob.</div>
+          <div class="scale-item-note">Detail strokes start to disappear. Lotus reads as a shape, not a flower.</div>
         </div>
         <div class="scale-item">
-          <img src="LuckyCrow_logo_bw.png" style="width: 64px; height: auto; background: #1a1535; padding: 10px; border-radius: 2px;" alt="Lucky Crow logo one-color version at icon size">
+          <img src="LuckyCrow_logo_bw.png" style="width: 64px; height: auto;" alt="Lucky Crow outline logo at icon size">
           <div class="scale-item-label">64px</div>
-          <div class="scale-item-note">Crow and moon merge. Mark is unrecognizable. Not viable for merch or icon use.</div>
+          <div class="scale-item-note">Crow and moon merge into a single unreadable shape.</div>
         </div>
       </div>
-      <p style="font-family: var(--ff-body); font-size: 14px; color: var(--text-dim); margin-top: 20px; font-style: italic;">Note: a true one-color version — solid black on white, no stroke fills — would perform worse than what's shown here. This is the best case for the current mark in reduced color.</p>
+      <p style="font-family: var(--ff-body); font-size: 14px; color: var(--text-dim); margin-top: 24px; font-style: italic;">This version is outline-based, not true flat one-color. It only works on light backgrounds — not reversed out on dark. A production-ready one-color mark would need to be rebuilt as solid fills, and currently doesn't exist in the system.</p>
     </div>
   </div>
 </section>
@@ -460,41 +461,41 @@
     <div class="sec-bar"></div>
     <div class="sec-label">Where we go from here</div>
     <h2 class="sec-h2">The bones are here. Now build the system they deserve.</h2>
-    <p class="sec-intro">This isn't a start-over. The crow and moon are real. The direction is right. What's missing is the work that makes this mark do its job everywhere Lucky Crow shows up.</p>
+    <p class="sec-intro">This isn't a start-over. Every element has a reason to be here. What's missing is the work that brings them into harmony — same visual language, proper hierarchy, a system that can scale.</p>
 
     <div class="path-list">
       <div class="path-item">
         <div class="path-num">01</div>
         <div class="path-text">
-          <strong>Make a direction decision on the illustration</strong>
-          <p>The crow needs to either commit to real illustration — detailed enough to read as genuine craft — or simplify to a graphic mark that's bold and replicable. The current middle ground reads as assembled. Picking a lane is not a loss. It's what makes the mark work.</p>
+          <strong>Commit to a visual language across all elements</strong>
+          <p>The crow, the lotus, the moon — they need to speak the same visual language. Same line weight, same level of stylization, same attitude. Right now they're in different registers. When they're unified, the mark reads as designed rather than assembled.</p>
         </div>
       </div>
       <div class="path-item">
         <div class="path-num">02</div>
         <div class="path-text">
-          <strong>Build a simplified icon version</strong>
-          <p>The crow/moon is the mark. Extract it, simplify it, give it a version that can live at 64px, on a sticker, on a hat, on a stamp. This is the workhorse that goes everywhere the full logo can't.</p>
+          <strong>Rebalance the hierarchy</strong>
+          <p>"Lucky Crow" is the most important piece of information in this mark. It needs to read at every size the logo gets used — not disappear behind the illustration. The name and the imagery need equal weight in the composition.</p>
         </div>
       </div>
       <div class="path-item">
         <div class="path-num">03</div>
         <div class="path-text">
-          <strong>Build a wordmark that reads at every size</strong>
-          <p>"Lucky Crow" needs its own typographic treatment that's legible at business card scale — independent of the illustration. Right now the name is the hardest thing to find. That's backwards.</p>
+          <strong>Build a simplified digital icon</strong>
+          <p>The full mark does a lot of work. A simplified version — stripped down to the essential visual signature — gives Lucky Crow something that lives at small sizes, on social profiles, as a favicon, on merch. Not a replacement for the full mark. A complement to it.</p>
         </div>
       </div>
       <div class="path-item">
         <div class="path-num">04</div>
         <div class="path-text">
-          <strong>Unify the lotus and the crow visually</strong>
-          <p>Right now they're two different illustration styles sharing a frame. The lotus and crow need to speak the same visual language — same line weight, same level of stylization, same attitude. When they do, the mark reads as designed rather than assembled.</p>
+          <strong>Build a true one-color version</strong>
+          <p>The current outline version only works on light backgrounds. A production-ready one-color mark — solid fills, no stroke dependency — opens up embroidery, screen print, stamps, and any reversed-out application. This is a gap the current system doesn't address.</p>
         </div>
       </div>
     </div>
 
     <div class="callout-closing">
-      None of this erases what you have. It makes it work — at every size, in every context, for every audience that encounters Lucky Crow.
+      The concept is right. The elements are right. The work ahead is getting them to move together.
     </div>
 
     <table class="steps-table" style="margin-top: 60px;">
@@ -507,27 +508,43 @@
       </thead>
       <tbody>
         <tr>
-          <td>→ Direction decision: illustration vs. graphic mark</td>
+          <td>→ Visual language direction decision</td>
           <td>Katy + Big Sis</td>
           <td>This conversation</td>
         </tr>
         <tr>
-          <td>→ Simplified icon development</td>
+          <td>→ Digital icon development</td>
+          <td>Big Sis</td>
+          <td>Current scope</td>
+        </tr>
+        <tr>
+          <td>→ Hierarchy + balance refinement</td>
           <td>Big Sis</td>
           <td>Phase 2 / TBD</td>
         </tr>
         <tr>
-          <td>→ Wordmark refinement</td>
-          <td>Big Sis</td>
-          <td>Phase 2 / TBD</td>
-        </tr>
-        <tr>
-          <td>→ Full mark unification</td>
+          <td>→ True one-color version</td>
           <td>Big Sis</td>
           <td>Phase 2 / TBD</td>
         </tr>
       </tbody>
     </table>
+  </div>
+</section>
+
+<div class="gold-rule"></div>
+
+<!-- DIGITAL MARK ITERATIONS — placeholder for Erin to populate -->
+<section class="sec" id="iterations" style="background: var(--bg);">
+  <div class="sec-inner reveal">
+    <div class="sec-bar"></div>
+    <div class="sec-label">Addressing the findings</div>
+    <h2 class="sec-h2">Digital mark iterations.</h2>
+    <p class="sec-intro">The changes below address the specific gaps identified in the evaluation — built for digital-first use: social profiles, website, digital applications.</p>
+    <!-- [CONTENT: Erin to add iteration images and notes here] -->
+    <div style="background: var(--bg-3); border: 1px dashed rgba(175,155,9,0.3); border-radius: 2px; padding: 60px 40px; text-align: center; margin-top: 8px;">
+      <p style="font-family: var(--ff-body); font-size: 14px; color: var(--text-dim); font-style: italic;">Iteration work coming — Erin to populate this section.</p>
+    </div>
   </div>
 </section>
 
