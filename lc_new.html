@@ -134,6 +134,13 @@
   .cal-table td:last-child { color: var(--moon); font-size: 13px; width: 200px; }
   .cal-table tr:last-child td { border-bottom: none; }
 
+  /* NEXT STEPS */
+  .dist-list { display: flex; flex-direction: column; gap: 0; margin-top: 8px; }
+  .dist-item { display: grid; grid-template-columns: 60px 1fr; gap: 24px; align-items: start; padding: 28px 0; border-bottom: 1px solid var(--rule); }
+  .dist-item:first-child { border-top: 1px solid var(--rule); }
+  .dist-num { font-family: var(--ff-display); font-weight: 700; font-size: 48px; color: var(--lotus); opacity: 0.5; line-height: 1; }
+  .dist-text strong { font-size: 18px; font-weight: 700; color: var(--text); display: block; font-family: var(--ff-body); }
+
   /* FOOTER */
   footer { background: var(--crow); border-top: 1px solid var(--rule-gold); padding: 48px 40px; }
   .footer-inner { max-width: 960px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px; }
@@ -605,6 +612,23 @@
 </section>
 
 <div class="gold-rule"></div>
+
+<div class="gold-rule"></div>
+
+<!-- NEXT STEPS -->
+<section class="sec" id="next-steps" style="background: var(--bg);">
+  <div class="sec-inner">
+    <div class="sec-bar"></div>
+    <div class="sec-label">Next Steps</div>
+    <h2 class="sec-h2 reveal">What happens now</h2>
+    <div style="margin-top: 32px; display: flex; flex-direction: column; gap: 0;">
+      <div style="padding: 18px 0; border-bottom: 1px solid var(--rule); border-top: 1px solid var(--rule); font-family: var(--ff-body); font-size: 17px; color: var(--text-mid);">1. &nbsp;<strong style="color: var(--text);">Gather feedback on social strategy</strong></div>
+      <div style="padding: 18px 0; border-bottom: 1px solid var(--rule); font-family: var(--ff-body); font-size: 17px; color: var(--text-mid);">2. &nbsp;<strong style="color: var(--text);">Build out social brand guidelines</strong></div>
+      <div style="padding: 18px 0; border-bottom: 1px solid var(--rule); font-family: var(--ff-body); font-size: 17px; color: var(--text-mid);">3. &nbsp;<strong style="color: var(--text);">Social executions</strong></div>
+      <div style="padding: 18px 0; border-bottom: 1px solid var(--rule); font-family: var(--ff-body); font-size: 17px; color: var(--text-mid);">4. &nbsp;<strong style="color: var(--text);">Brief on intro video</strong></div>
+    </div>
+  </div>
+</section>
 
 <!-- FOOTER -->
 <footer>
