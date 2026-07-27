@@ -1,0 +1,732 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lucky Crow Apothecary & Readeasy — Social Strategy</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Epilogue:wght@0,400;0,600;0,700&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --bg:        #0d0b1a;
+    --bg-2:      #13102a;
+    --bg-3:      #1a1535;
+    --crow:      #080916;
+    --lotus:     #50206d;
+    --moon:      #83748c;
+    --gold:      #af9b09;
+    --white:     #ffffff;
+
+    --text:         rgba(245,240,250,1.0);
+    --text-mid:     rgba(245,240,250,0.65);
+    --text-dim:     rgba(245,240,250,0.35);
+    --rule:         rgba(245,240,250,0.08);
+    --rule-gold:    rgba(175,155,9,0.3);
+
+    --ff-display: 'Playfair Display', serif;
+    --ff-body:    'Epilogue', sans-serif;
+  }
+
+  html { scroll-behavior: smooth; }
+  body { font-family: var(--ff-body); background: var(--bg); color: var(--text); }
+  h1,h2,h3,h4,h5,h6 { font-weight: 400; }
+
+  /* NAV */
+  nav {
+    position: sticky; top: 0; z-index: 100;
+    height: 68px; padding: 0 40px;
+    display: flex; align-items: center; justify-content: space-between;
+    background: rgba(8,9,22,0.95);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--rule);
+  }
+  .nav-project { font-family: var(--ff-display); font-size: 13px; font-weight: 700; font-style: normal; text-transform: uppercase; letter-spacing: .1em; color: var(--text-mid); }
+  .nav-links { display: flex; gap: 28px; }
+  .nav-links a { font-family: var(--ff-display); font-size: 12px; font-style: normal; font-weight: 700; text-transform: uppercase; letter-spacing: .1em; color: var(--text-mid); text-decoration: none; transition: color .2s; }
+  .nav-links a:hover { color: var(--gold); }
+
+  /* HERO */
+  .hero {
+    min-height: calc(100vh - 68px);
+    background: #2a1545;
+    background-image:
+      linear-gradient(135deg, #3b1d5e 0%, #2a1545 40%, #1e1038 70%, #150b2e 100%),
+      radial-gradient(ellipse 60% 55% at 30% 50%, rgba(110,55,160,0.55) 0%, transparent 60%),
+      radial-gradient(ellipse 50% 70% at 10% 90%, rgba(80,32,109,0.35) 0%, transparent 55%),
+      radial-gradient(ellipse 40% 40% at 65% 20%, rgba(175,155,9,0.08) 0%, transparent 50%);
+    background-blend-mode: normal, screen, screen, screen;
+    display: flex; align-items: center;
+    padding: 80px 40px;
+    position: relative; overflow: hidden;
+  }
+  .hero-inner {
+    max-width: 1200px; margin: 0 auto; width: 100%;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center;
+  }
+  .hero-text { position: relative; z-index: 1; }
+  .hero-label { color: var(--white); font-family: var(--ff-body); font-size: 15px; letter-spacing: .14em; text-transform: uppercase; font-weight: 600; margin-bottom: 24px; white-space: nowrap; }
+  .hero-h1 {
+    font-family: var(--ff-display); font-weight: 700; font-style: italic;
+    font-size: clamp(52px, 8.4vw, 105px);
+    color: var(--gold); line-height: 1.0; margin-bottom: 28px;
+  }
+  .hero-date { color: var(--text-dim); font-family: var(--ff-body); font-size: 18px; letter-spacing: .06em; }
+  .hero-logo { display: flex; align-items: center; justify-content: center; position: relative; }
+  .hero-logo img { width: 624px; height: auto; position: relative; z-index: 1; mix-blend-mode: screen; }
+
+  /* DIVIDER */
+  .gold-rule { width: 100%; height: 1px; background: var(--rule-gold); }
+
+  /* SECTIONS */
+  .sec { padding: 80px 40px; }
+  .sec-inner { max-width: 960px; margin: 0 auto; }
+  .sec-bar { width: 48px; height: 3px; background: var(--gold); margin-bottom: 16px; }
+  .sec-label { font-family: var(--ff-body); font-size: 11px; letter-spacing: .16em; text-transform: uppercase; font-weight: 600; color: var(--text-dim); margin-bottom: 12px; }
+  .sec-h2 { font-family: var(--ff-display); font-weight: 700; font-size: clamp(30px, 4.5vw, 50px); line-height: 1.15; color: var(--text); margin-bottom: 24px; }
+  .body-copy { font-size: 22px; line-height: 1.4; color: var(--text-mid); font-family: var(--ff-display); font-style: italic; margin-bottom: 32px; letter-spacing: -0.01em; }
+  .body-copy-plain { font-size: 17px; line-height: 1.75; color: var(--text-mid); font-family: var(--ff-body); margin-bottom: 24px; }
+
+  /* PLATFORM CARDS */
+  .platform-3col { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-top: 40px; }
+  .platform-col { background: var(--bg-3); border: 1px solid var(--rule); border-top: 3px solid var(--gold); padding: 32px; }
+  .platform-col-name { font-family: var(--ff-body); font-size: 18px; font-weight: 700; color: var(--text); margin-bottom: 6px; }
+  .platform-col-role { font-family: var(--ff-display); font-style: italic; font-size: 15px; color: var(--gold); margin-bottom: 20px; }
+  .platform-col h4 { font-family: var(--ff-body); font-size: 11px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--text-dim); margin: 18px 0 8px; }
+  .platform-col ul { list-style: none; display: flex; flex-direction: column; gap: 8px; }
+  .platform-col li { font-size: 15px; line-height: 1.6; color: var(--text-mid); padding-left: 1.2em; position: relative; }
+  .platform-col li::before { content: '→'; position: absolute; left: 0; color: var(--gold); }
+  .platform-col .cadence-chip { display: inline-block; background: rgba(175,155,9,0.15); color: var(--gold); font-family: var(--ff-body); font-size: 12px; font-weight: 700; letter-spacing: .06em; padding: 4px 10px; margin-top: 16px; }
+
+  /* PILLARS */
+  .pillars-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-top: 40px; }
+  .pillar-card { background: var(--bg-3); border: 1px solid var(--rule); border-top: 3px solid var(--lotus); padding: 28px; }
+  .pillar-num { font-family: var(--ff-display); font-weight: 700; font-size: 40px; color: var(--white); line-height: 1; margin-bottom: 12px; }
+  .pillar-name { font-family: var(--ff-body); font-size: 16px; font-weight: 700; color: var(--text); margin-bottom: 8px; }
+  .pillar-desc { font-size: 14px; line-height: 1.65; color: var(--text-mid); margin-bottom: 12px; }
+  .pillar-card h4 { font-family: var(--ff-body); font-size: 11px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--text-dim); margin: 16px 0 10px; }
+  .pillar-card ul { list-style: none; display: flex; flex-direction: column; gap: 8px; margin-bottom: 14px; }
+  .pillar-card li { font-size: 13px; line-height: 1.6; color: var(--text-mid); padding-left: 1.2em; position: relative; }
+  .pillar-card li::before { content: '→'; position: absolute; left: 0; color: var(--white); }
+  .pillar-platforms { font-size: 12px; color: var(--moon); font-family: var(--ff-body); font-style: italic; margin-top: 4px; }
+  .pillar-card-wide { grid-column: span 3; background: var(--bg-3); border: 1px solid var(--rule); border-top: 3px solid var(--gold); padding: 28px; margin-top: 0; }
+  .pillar-card-wide p { font-size: 15px; line-height: 1.7; color: var(--text-mid); }
+
+  /* CADENCE TABLE */
+  .cadence-table { width: 100%; border-collapse: collapse; margin-top: 40px; }
+  .cadence-table th { font-family: var(--ff-body); font-size: 11px; letter-spacing: .14em; text-transform: uppercase; font-weight: 600; color: var(--text-dim); padding: 0 0 16px; text-align: left; border-bottom: 1px solid var(--rule-gold); }
+  .cadence-table td { padding: 18px 0; border-bottom: 1px solid var(--rule); font-size: 16px; color: var(--text-mid); vertical-align: top; font-family: var(--ff-body); padding-right: 32px; }
+  .cadence-table td:first-child { color: var(--text); font-weight: 600; }
+  .cadence-table td:last-child { color: var(--gold); font-size: 14px; padding-right: 0; }
+  .cadence-note { margin-top: 32px; font-family: var(--ff-display); font-style: italic; font-size: 17px; line-height: 1.7; color: var(--text-mid); border-left: 3px solid var(--gold); padding-left: 24px; }
+
+  /* CALENDAR */
+  .week-block { margin-bottom: 48px; }
+  .week-label { font-family: var(--ff-body); font-size: 12px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--gold); margin-bottom: 16px; padding-bottom: 12px; border-bottom: 1px solid var(--rule-gold); }
+  .cal-table { width: 100%; border-collapse: collapse; }
+  .cal-table th { font-family: var(--ff-body); font-size: 11px; letter-spacing: .12em; text-transform: uppercase; font-weight: 600; color: var(--text-dim); padding: 0 0 12px; text-align: left; border-bottom: 1px solid var(--rule); }
+  .cal-table th:not(:last-child) { padding-right: 24px; }
+  .cal-table td { padding: 14px 0; border-bottom: 1px solid var(--rule); font-size: 15px; color: var(--text-mid); vertical-align: top; font-family: var(--ff-body); }
+  .cal-table td:not(:last-child) { padding-right: 24px; }
+  .cal-table td:first-child { color: var(--text); font-weight: 600; width: 100px; }
+  .cal-table td:last-child { color: var(--moon); font-size: 13px; width: 200px; }
+  .cal-table tr:last-child td { border-bottom: none; }
+
+  /* FOOTER */
+  footer { background: var(--crow); border-top: 1px solid var(--rule-gold); padding: 48px 40px; }
+  .footer-inner { max-width: 960px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px; }
+  .footer-logo { height: 32px; width: auto; mix-blend-mode: screen; }
+  .footer-chips { display: flex; align-items: center; gap: 16px; flex-wrap: wrap; }
+  .chip { background: var(--lotus); color: white; font-family: var(--ff-body); font-size: 10px; letter-spacing: .1em; text-transform: uppercase; padding: 4px 12px; }
+  .footer-credit { color: var(--text-dim); font-size: 12px; font-family: var(--ff-body); }
+
+  /* ARCHIVE */
+  .archive-header-bar { background: var(--crow); padding: 24px 40px 0; border-top: 1px solid var(--rule-gold); }
+  .archive-header-label { font-family: var(--ff-body); font-size: 14px; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: var(--text-mid); }
+  .archive-section { background: var(--crow); }
+  .archive-btn { width: 100%; background: var(--bg-2); border: none; border-top: 3px solid var(--lotus); padding: 20px 40px; cursor: pointer; display: flex; justify-content: space-between; align-items: center; font-family: var(--ff-body); font-weight: 600; font-size: 15px; color: var(--text-dim); letter-spacing: .04em; }
+  .archive-btn:hover { color: var(--text); }
+  .archive-chevron { transition: transform .35s ease; font-size: 18px; color: var(--lotus); }
+  .archive-btn.open .archive-chevron { transform: rotate(180deg); }
+  .archive-panel { max-height: 0; overflow: hidden; transition: max-height .6s ease; background: var(--bg); }
+  .archive-panel.open { max-height: 99999px; }
+
+  /* FLYERS (archived) */
+  .flyer-recap ul { list-style: none; display: flex; flex-direction: column; gap: 10px; margin-bottom: 32px; }
+  .flyer-recap li { font-size: 16px; line-height: 1.6; color: var(--text-mid); font-family: var(--ff-body); padding-left: 1.5em; text-indent: -1.5em; }
+  .flyer-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 24px; }
+  .flyer-card { display: flex; flex-direction: column; gap: 14px; }
+  .flyer-label { font-family: var(--ff-body); font-size: 11px; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: var(--gold); }
+  .flyer-card img { width: 100%; height: auto; border-radius: 2px; }
+  .flyer-expand-hint { font-family: var(--ff-body); font-size: 16px; color: var(--text-mid); font-style: italic; margin-bottom: 20px; }
+  .flyer-thumb { cursor: zoom-in; transition: opacity .2s; }
+  .flyer-thumb:hover { opacity: 0.85; }
+  .flyer-note { font-family: var(--ff-body); font-size: 13px; color: var(--text-dim); font-style: italic; margin-top: 20px; }
+  .pdf-download { margin-top: 32px; display: flex; flex-direction: column; align-items: flex-start; gap: 8px; }
+  .pdf-btn { display: inline-flex; align-items: center; gap: 10px; background: var(--lotus); color: #fff; font-family: var(--ff-body); font-size: 15px; font-weight: 600; letter-spacing: .04em; padding: 14px 24px; text-decoration: none; transition: opacity .2s; }
+  .pdf-btn:hover { opacity: 0.85; }
+  .pdf-icon { font-size: 18px; font-weight: 700; }
+  .pdf-note { font-family: var(--ff-body); font-size: 12px; color: var(--text-dim); letter-spacing: .06em; text-transform: uppercase; }
+
+  /* ARCHIVE INTERIOR */
+  .archive-panel .arc-inner { max-width: 960px; margin: 0 auto; padding: 64px 40px; }
+  .archive-panel .arc-header { margin-bottom: 48px; padding-bottom: 24px; border-bottom: 1px solid var(--rule-gold); }
+  .archive-panel .arc-header h3 { font-family: var(--ff-display); font-weight: 700; font-style: italic; font-size: 28px; color: var(--gold); margin-bottom: 6px; }
+  .archive-panel .arc-header p { font-family: var(--ff-body); font-size: 14px; color: var(--text-dim); }
+
+  /* LIGHTBOX */
+  #lightbox { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.92); z-index: 999; cursor: zoom-out; align-items: center; justify-content: center; }
+  #lightbox.open { display: flex; }
+  #lightbox-img { max-height: 90vh; max-width: 90vw; width: auto; height: auto; border-radius: 2px; }
+
+  /* REVEAL */
+  .reveal { opacity: 0; transform: translateY(18px); transition: opacity .5s ease, transform .5s ease; }
+  .reveal.visible { opacity: 1; transform: none; }
+
+  /* MOBILE */
+  @media (max-width: 700px) {
+    nav { padding: 0 20px; }
+    .nav-links { gap: 14px; }
+    .hero { padding: 60px 20px; }
+    .hero-inner { grid-template-columns: 1fr; gap: 40px; }
+    .hero-logo img { width: 240px; }
+    .sec { padding: 60px 20px; }
+    .platform-3col { grid-template-columns: 1fr; }
+    .pillars-grid { grid-template-columns: 1fr; }
+    .pillar-card-wide { grid-column: span 1; }
+    footer { padding: 40px 20px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <span class="nav-project">Lucky Crow / Social Strategy</span>
+  <div class="nav-links">
+    <a href="#platform">Platforms</a>
+    <a href="#pillars">Content Pillars</a>
+    <a href="#cadence">Cadence</a>
+    <a href="#calendar">Calendar</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="top">
+  <div class="hero-inner">
+    <div class="hero-logo">
+      <img src="LCNAR.png" alt="Lucky Crow Apothecary &amp; Readeasy">
+    </div>
+    <div class="hero-text">
+      <div class="hero-label">Lucky Crow Apothecary &amp; Readeasy™</div>
+      <h1 class="hero-h1">Social<br>Strategy</h1>
+      <div class="hero-date">07.27.2026</div>
+    </div>
+  </div>
+</section>
+
+<div class="gold-rule"></div>
+
+<!-- PLATFORM STRATEGY -->
+<section class="sec" id="platform" style="background: var(--bg);">
+  <div class="sec-inner">
+    <div class="sec-bar"></div>
+    <div class="sec-label">Platforms</div>
+    <h2 class="sec-h2 reveal">Show up where it counts</h2>
+    <p class="body-copy reveal">Each of the three platforms reaches a different slice of the Lucky Crow community, tapping into some of the learnings from the community survey. The focus right now is building a presence and following before the doors open.</p>
+
+    <div class="platform-3col reveal">
+
+      <div class="platform-col">
+        <div class="platform-col-name">Instagram</div>
+        <div class="platform-col-role">Primary Channel</div>
+        <p class="body-copy-plain" style="font-size:14px; margin-bottom:16px;">This is where Lucky Crow's audience already lives. Book lovers, wellness-minded regulars, and third-space seekers are all here, across a broad age range.</p>
+        <h4>What it's for</h4>
+        <ul>
+          <li>Building hype and community support before the doors open</li>
+          <li>Teasing out brand identity and interior design (behind the scenes)</li>
+          <li>Addressing what we've heard from the community</li>
+        </ul>
+        <h4>Content types</h4>
+        <ul>
+          <li>Vibe and atmosphere visuals</li>
+          <li>Community-informed updates</li>
+          <li>Engagement posts (naming contests, guessing games)</li>
+          <li>Brand storytelling</li>
+        </ul>
+        <h4>Best practices</h4>
+        <ul>
+          <li>Polished but not perfect. Intentional, phone-captured content often outperforms over-produced content.</li>
+          <li>Reels get the most reach and outperform static for new audiences.</li>
+          <li>Consistency beats frequency. A realistic cadence instead of sporadic bursts.</li>
+          <li>Use location tags and keywords in captions for local discovery.</li>
+          <li>Stories are great for behind-the-scenes content.</li>
+        </ul>
+      </div>
+
+      <div class="platform-col">
+        <div class="platform-col-name">Facebook</div>
+        <div class="platform-col-role">Community Anchor</div>
+        <p class="body-copy-plain" style="font-size:14px; margin-bottom:16px;">Facebook reaches the people most active in local community groups, which is where a lot of our research came from.</p>
+        <h4>What it's for</h4>
+        <ul>
+          <li>Longer-form storytelling and direct dialogue with Madison</li>
+          <li>Turning survey findings into visible action</li>
+          <li>Where community listening becomes community building</li>
+        </ul>
+        <h4>Content types</h4>
+        <ul>
+          <li>Community acknowledgment posts</li>
+          <li>Founder story and origin content</li>
+          <li>Local group engagement</li>
+        </ul>
+        <h4>Best practices</h4>
+        <ul>
+          <li>Longer-form storytelling and community dialogue.</li>
+          <li>The algorithm rewards comments and replies. Ask questions and respond as much as you can.</li>
+          <li>Drop links in the first comment, not the caption, to avoid reach penalties.</li>
+          <li>Hit Facebook Groups for focused communities (but you already know this).</li>
+          <li>80/20 rule: 80% value-driven content, 20% promotional.</li>
+        </ul>
+      </div>
+
+      <div class="platform-col">
+        <div class="platform-col-name">TikTok</div>
+        <div class="platform-col-role">Targeted Reach</div>
+        <p class="body-copy-plain" style="font-size:14px; margin-bottom:16px;">A smaller but valuable audience, specifically the reading community on BookTok, which overlaps directly with Lucky Crow's core demographic.</p>
+        <h4>What it's for</h4>
+        <ul>
+          <li>Short, authentic "build in the open" content</li>
+          <li>Reaching a passionate, tightly-knit niche</li>
+          <li>Showing personality before the space exists</li>
+        </ul>
+        <h4>Content types</h4>
+        <ul>
+          <li>Short-form brand story</li>
+          <li>Drink and product reveals</li>
+          <li>Quick educational content</li>
+        </ul>
+        <h4>Best practices</h4>
+        <ul>
+          <li>Raw and real outperforms polished. Think phone camera, natural light, genuine energy.</li>
+          <li>Hook in the first 3 seconds to capture and keep attention. Use messaging on screen.</li>
+          <li>Respond to as many comments as you can with video replies to build community and spark new content.</li>
+          <li>Participate in trends only when they genuinely fit.</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<div class="gold-rule"></div>
+
+<!-- CONTENT PILLARS -->
+<section class="sec" id="pillars" style="background: var(--bg-2);">
+  <div class="sec-inner">
+    <div class="sec-bar"></div>
+    <div class="sec-label">Content Pillars</div>
+    <h2 class="sec-h2 reveal">Lucky Crow focus areas</h2>
+    <p class="body-copy reveal">Every post focuses on one of six areas, designed to inform, entertain, and engage, while steadily building the brand, the audience, and the anticipation.</p>
+
+    <div class="pillars-grid reveal">
+
+      <div class="pillar-card">
+        <div class="pillar-num">01</div>
+        <div class="pillar-name">Building something special</div>
+        <div class="pillar-desc">Space search updates, mood board teasers, logo significance, waitlist milestones.</div>
+        <h4>Content examples</h4>
+        <ul>
+          <li><strong>Mood board teasers:</strong> glimpses of design inspiration without revealing the full space</li>
+          <li><strong>Logo significance:</strong> the meaning and symbolism behind the mark</li>
+          <li><strong>Waitlist milestones:</strong> "100+ people on the list!" and a reminder on how to join</li>
+          <li><strong>Location updates:</strong> signed lease and location info</li>
+        </ul>
+      </div>
+
+      <div class="pillar-card">
+        <div class="pillar-num">02</div>
+        <div class="pillar-name">Background</div>
+        <div class="pillar-desc">Founder origin story, personal milestones, and the story behind Lucky Crow told in Katy's own words.</div>
+        <h4>Content examples</h4>
+        <ul>
+          <li><strong>Meet Katy:</strong> a casual, personal introduction</li>
+          <li><strong>The Leap:</strong> the story of how you decided to pursue Lucky Crow</li>
+          <li><strong>Mom's story:</strong> her inspiration, and a tease of the cookie fundraising to honor her memory</li>
+        </ul>
+      </div>
+
+      <div class="pillar-card">
+        <div class="pillar-num">03</div>
+        <div class="pillar-name">About Lucky Crow</div>
+        <div class="pillar-desc">Everything people want to and should know about Lucky Crow, and what makes it unlike anything else in Madison.</div>
+        <h4>Content examples</h4>
+        <ul>
+          <li><strong>"Step into the Crow's Nest":</strong> Katy answers questions she anticipates or has been asked</li>
+          <li><strong>Apothecary and Readeasy explainers:</strong> why the space leans into those names and what they mean</li>
+          <li><strong>Secret entrance:</strong> building intrigue by teasing how guests access the Readeasy</li>
+          <li><strong>Madison context:</strong> what Lucky Crow sees in the community and why now is the right time</li>
+        </ul>
+      </div>
+
+      <div class="pillar-card">
+        <div class="pillar-num">04</div>
+        <div class="pillar-name">Food & Drink</div>
+        <div class="pillar-desc">Weekly drink reveals, contests, Lotus spotlights, plant-based education, and food menu content.</div>
+        <h4>Content examples</h4>
+        <ul>
+          <li><strong>Weekly drink reveal:</strong> a stylized photo introducing one new drink each week</li>
+          <li><strong>"Name the Drink" contest:</strong> winner gets drinks for a year, a shoutout, and a merch bundle</li>
+          <li><strong>Lotus brand feature:</strong> spotlighting Lotus as the only place in Madison to get it</li>
+          <li><strong>Plant-based energy 101:</strong> a short educational series demystifying botanical energy drinks</li>
+          <li><strong>The whole menu:</strong> highlighting snacks and food items beyond drinks</li>
+        </ul>
+      </div>
+
+      <div class="pillar-card">
+        <div class="pillar-num">05</div>
+        <div class="pillar-name">Reading & Books</div>
+        <div class="pillar-desc">"Book of the Week" picks, book and drink pairings, and deeper Readeasy storytelling.</div>
+        <h4>Content examples</h4>
+        <ul>
+          <li><strong>Book of the Week:</strong> Katy shares a pick that sets the tone for the week, or asks the community for recommendations</li>
+          <li><strong>Book chatter:</strong> reading and book-related prompts and questions designed to spark conversation and community engagement</li>
+          <li><strong>Book + drink pairing:</strong> matching a book's vibe to a specific drink</li>
+          <li><strong>Deeper on Readeasy:</strong> the inspiration behind the lounge concept and celebrating it as the first and only one in the world</li>
+        </ul>
+      </div>
+
+      <div class="pillar-card">
+        <div class="pillar-num">06</div>
+        <div class="pillar-name">Trend Awareness</div>
+        <div class="pillar-desc">Keeping an eye on what trends are popular on social and finding moments to jump in when it feels right.</div>
+        <h4>Content examples</h4>
+        <ul>
+          <li><strong>Trending audio:</strong> using a popular sound in a way that feels natural to the brand</li>
+          <li><strong>Format participation:</strong> joining a trending format (challenge, POV, Netflix Doc, etc.) with a Lucky Crow spin</li>
+          <li><strong>Timely hooks:</strong> tying relevant cultural moments or seasons to Lucky Crow content</li>
+        </ul>
+      </div>
+
+      <div class="pillar-card-wide">
+        <div class="sec-label" style="margin-bottom: 16px;">Considerations</div>
+        <div style="display: flex; flex-direction: column; gap: 20px;">
+          <div>
+            <div style="font-family: var(--ff-body); font-size: 15px; font-weight: 700; color: var(--text); margin-bottom: 6px;">CTA</div>
+            <p style="font-size: 14px; line-height: 1.65; color: var(--text-mid);">Every post should drive people to take action. Join the waitlist, follow accounts on all platforms, come visit, etc. Keep the ask soft and varied, but make sure it's usually there.</p>
+          </div>
+          <div>
+            <div style="font-family: var(--ff-body); font-size: 15px; font-weight: 700; color: var(--text); margin-bottom: 6px;">Cross-platform creative</div>
+            <p style="font-size: 14px; line-height: 1.65; color: var(--text-mid);">Not every piece of content needs to be built from scratch for each platform. A lot of what gets created can be used directly across multiple channels, or adapted with minor tweaks.</p>
+          </div>
+          <div>
+            <div style="font-family: var(--ff-body); font-size: 15px; font-weight: 700; color: var(--text); margin-bottom: 6px;">Trend awareness</div>
+            <p style="font-size: 14px; line-height: 1.65; color: var(--text-mid);">Keep an eye on what's moving on social and look for moments to jump in, but only when it feels on-brand.</p>
+          </div>
+          <div>
+            <div style="font-family: var(--ff-body); font-size: 15px; font-weight: 700; color: var(--text); margin-bottom: 6px;">Production efficiencies</div>
+            <p style="font-size: 14px; line-height: 1.65; color: var(--text-mid);">Look for opportunities to produce multiple pieces of content, for one or multiple series, in a single session.</p>
+          </div>
+          <div>
+            <div style="font-family: var(--ff-body); font-size: 15px; font-weight: 700; color: var(--text); margin-bottom: 6px;">Engagement</div>
+            <p style="font-size: 14px; line-height: 1.65; color: var(--text-mid);">Responding to comments, asking questions, and inviting the community to weigh in builds relationships and extends reach. Every interaction is an opportunity to grow the audience and deepen the connection.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- ONE POST FOUR PLATFORMS -->
+      <div class="pillar-card-wide" style="margin-top: 2px;">
+        <div class="sec-label" style="margin-bottom: 8px;">Cross-platform creative in action</div>
+        <div style="font-family: var(--ff-body); font-size: 18px; font-weight: 700; color: var(--text); margin-bottom: 12px;">One post, four platforms</div>
+        <p style="font-size: 14px; line-height: 1.65; color: var(--text-mid); margin-bottom: 28px;">When setting up for a shoot or a video, think beyond one platform. A single setup can generate content for all channels, with minimal extra effort. The more you can get out of each session, the further your content goes.</p>
+        <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px;">
+
+          <div style="background: var(--bg-2); padding: 20px; border-top: 3px solid var(--gold);">
+            <div style="font-family: var(--ff-body); font-size: 10px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--gold); margin-bottom: 8px;">Instagram / Feed Post</div>
+            <div style="position: relative; margin-bottom: 14px;"><img src="ruby-slipper.jpg" alt="The Ruby Slipper" style="width: 100%; height: 160px; object-fit: cover; display: block;"><div style="position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; background: rgba(0,0,0,0.35);"><span style="font-family: var(--ff-body); font-size: 33px; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: rgba(255,255,255,0.7);">FPO</span></div></div>
+            <div style="font-family: var(--ff-body); font-size: 12px; font-weight: 700; color: var(--text); margin-bottom: 4px;">Visual</div>
+            <p style="font-size: 12px; color: var(--text-mid); line-height: 1.55; margin-bottom: 10px;">The Ruby Slipper — straight-on shot</p>
+            <div style="font-family: var(--ff-body); font-size: 12px; font-weight: 700; color: var(--text); margin-bottom: 4px;">Caption</div>
+            <p style="font-size: 12px; color: var(--text-mid); line-height: 1.55; margin-bottom: 10px;">Meet the Ruby Slipper. She's a refreshing blend of peach and raspberry, fueled by plant-based Pink Lotus Energy. There's no place like @luckycrowmadison.</p>
+            <div style="font-family: var(--ff-body); font-size: 12px; font-weight: 700; color: var(--text); margin-bottom: 4px;">Tags</div>
+            <p style="font-size: 12px; color: var(--text-mid); line-height: 1.55;">@luckycrowmadison, Lotus Energy, Madison WI location tag</p>
+          </div>
+
+          <div style="background: var(--bg-2); padding: 20px; border-top: 3px solid var(--gold);">
+            <div style="font-family: var(--ff-body); font-size: 10px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--gold); margin-bottom: 8px;">Instagram / Story</div>
+            <div style="position: relative; margin-bottom: 14px;"><img src="ruby-slipper.jpg" alt="The Ruby Slipper" style="width: 100%; height: 160px; object-fit: cover; display: block;"><div style="position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; background: rgba(0,0,0,0.35);"><span style="font-family: var(--ff-body); font-size: 33px; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: rgba(255,255,255,0.7);">FPO</span></div></div>
+            <div style="font-family: var(--ff-body); font-size: 12px; font-weight: 700; color: var(--text); margin-bottom: 4px;">Visual</div>
+            <p style="font-size: 12px; color: var(--text-mid); line-height: 1.55; margin-bottom: 10px;">Same photo, cropped vertical</p>
+            <div style="font-family: var(--ff-body); font-size: 12px; font-weight: 700; color: var(--text); margin-bottom: 4px;">Overlay text</div>
+            <p style="font-size: 12px; color: var(--text-mid); line-height: 1.55; margin-bottom: 10px;">"Feast your eyes on this beauty. The Ruby Slipper arrives soon."</p>
+            <div style="font-family: var(--ff-body); font-size: 12px; font-weight: 700; color: var(--text); margin-bottom: 4px;">Sticker</div>
+            <p style="font-size: 12px; color: var(--text-mid); line-height: 1.55;">Link to waitlist, or a poll: "Team peach or team raspberry?"</p>
+          </div>
+
+          <div style="background: var(--bg-2); padding: 20px; border-top: 3px solid var(--gold);">
+            <div style="font-family: var(--ff-body); font-size: 10px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--gold); margin-bottom: 8px;">TikTok</div>
+            <div style="position: relative; margin-bottom: 14px;"><img src="ruby-slipper.jpg" alt="The Ruby Slipper" style="width: 100%; height: 160px; object-fit: cover; display: block;"><div style="position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; background: rgba(0,0,0,0.35);"><span style="font-family: var(--ff-body); font-size: 33px; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: rgba(255,255,255,0.7);">FPO</span></div></div>
+            <div style="font-family: var(--ff-body); font-size: 12px; font-weight: 700; color: var(--text); margin-bottom: 4px;">Visual</div>
+            <p style="font-size: 12px; color: var(--text-mid); line-height: 1.55; margin-bottom: 10px;">Pour shot or drink reveal, 10–15 sec</p>
+            <div style="font-family: var(--ff-body); font-size: 12px; font-weight: 700; color: var(--text); margin-bottom: 4px;">On-screen text</div>
+            <p style="font-size: 12px; color: var(--text-mid); line-height: 1.55; margin-bottom: 10px;">"There's no place like Lucky Crow"</p>
+            <div style="font-family: var(--ff-body); font-size: 12px; font-weight: 700; color: var(--text); margin-bottom: 4px;">Sound</div>
+            <p style="font-size: 12px; color: var(--text-mid); line-height: 1.55;">Trending audio if one fits naturally, otherwise soft/ambient</p>
+          </div>
+
+          <div style="background: var(--bg-2); padding: 20px; border-top: 3px solid var(--gold);">
+            <div style="font-family: var(--ff-body); font-size: 10px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--gold); margin-bottom: 8px;">Facebook</div>
+            <div style="position: relative; margin-bottom: 14px;"><img src="ruby-slipper.jpg" alt="The Ruby Slipper" style="width: 100%; height: 160px; object-fit: cover; display: block;"><div style="position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; background: rgba(0,0,0,0.35);"><span style="font-family: var(--ff-body); font-size: 33px; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: rgba(255,255,255,0.7);">FPO</span></div></div>
+            <div style="font-family: var(--ff-body); font-size: 12px; font-weight: 700; color: var(--text); margin-bottom: 4px;">Visual</div>
+            <p style="font-size: 12px; color: var(--text-mid); line-height: 1.55; margin-bottom: 10px;">Same photo, longer caption, more conversational</p>
+            <div style="font-family: var(--ff-body); font-size: 12px; font-weight: 700; color: var(--text); margin-bottom: 4px;">Caption</div>
+            <p style="font-size: 12px; color: var(--text-mid); line-height: 1.55;">Meet the Ruby Slipper. She's a refreshing blend of peach and raspberry, fueled by plant-based Pink Lotus Energy. What should we name the next one? Drop your ideas below!</p>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<div class="gold-rule"></div>
+
+<!-- CADENCE -->
+<section class="sec" id="cadence" style="background: var(--bg);">
+  <div class="sec-inner">
+    <div class="sec-bar"></div>
+    <div class="sec-label">Cadence</div>
+    <h2 class="sec-h2 reveal">Posting frequency</h2>
+
+    <table class="cadence-table reveal">
+      <thead>
+        <tr>
+          <th>Pillar</th>
+          <th>Frequency</th>
+          <th>Platform</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>Building something special</td><td>Every 1–2 weeks</td><td>IG + FB + TikTok</td></tr>
+        <tr><td>Background</td><td>Every 1–2 weeks</td><td>FB + IG</td></tr>
+        <tr><td>About Lucky Crow</td><td>1x per week (anchor)</td><td>IG + FB</td></tr>
+        <tr><td>Food & Drink</td><td>1x per week (anchor)</td><td>TikTok + IG</td></tr>
+        <tr><td>Reading & Books</td><td>Every 1–2 weeks</td><td>IG</td></tr>
+        <tr><td>Trend Awareness</td><td>As needed, every 2–3 weeks</td><td>TikTok + IG</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<div class="gold-rule"></div>
+
+<!-- CALENDAR -->
+<section class="sec" id="calendar" style="background: var(--bg-2);">
+  <div class="sec-inner" style="max-width: 1100px;">
+    <div class="sec-bar"></div>
+    <div class="sec-label">Calendar</div>
+    <h2 class="sec-h2 reveal">Four week sample</h2>
+    <p class="body-copy reveal">Once the accounts are set up and introductory posts are live, this four-week calendar provides a starting point for consistent, planned content. Having a framework in place makes it easier to stay on track, build posting habits, and give your audience something to expect.</p>
+
+    <style>
+      .cal-grid { display: grid; grid-template-columns: 80px repeat(5, 1fr); gap: 2px; margin-top: 32px; margin-bottom: 40px; }
+      .cal-header { background: var(--bg-3); padding: 10px 12px; font-family: var(--ff-body); font-size: 10px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--gold); }
+      .cal-week-label { background: var(--lotus); padding: 10px 12px; font-family: var(--ff-body); font-size: 11px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; color: #fff; display: flex; align-items: center; writing-mode: horizontal-tb; }
+      .cal-cell { background: var(--bg-3); padding: 12px; min-height: 90px; display: flex; flex-direction: column; gap: 6px; }
+      .cal-cell-content { font-family: var(--ff-body); font-size: 12px; line-height: 1.5; color: var(--text-mid); flex: 1; }
+      .cal-cell-platform { font-family: var(--ff-body); font-size: 10px; color: var(--moon); letter-spacing: .06em; text-transform: uppercase; }
+      .cal-corner { background: var(--bg-2); }
+    </style>
+
+    <div class="cal-grid reveal">
+      <div class="cal-corner"></div>
+      <div class="cal-header">Monday</div>
+      <div class="cal-header">Tuesday</div>
+      <div class="cal-header">Wednesday</div>
+      <div class="cal-header">Thursday</div>
+      <div class="cal-header">Friday</div>
+      <div class="cal-week-label">Week 1</div>
+      <div class="cal-cell"><div class="cal-cell-content">Weekly drink reveal #1</div><div class="cal-cell-platform">Instagram</div></div>
+      <div class="cal-cell"><div class="cal-cell-content">Cutdown of Monday's drink reveal</div><div class="cal-cell-platform">TikTok</div></div>
+      <div class="cal-cell"><div class="cal-cell-content">"Step into the Crow's Nest" launch + apothecary explainer</div><div class="cal-cell-platform">Instagram, Facebook</div></div>
+      <div class="cal-cell"><div class="cal-cell-content">"Meet Katy" origin story</div><div class="cal-cell-platform">Facebook</div></div>
+      <div class="cal-cell"><div class="cal-cell-content">"You said, we listened" later hours differentiator</div><div class="cal-cell-platform">Facebook, Instagram</div></div>
+    </div>
+
+    <div class="cal-grid reveal">
+      <div class="cal-corner"></div>
+      <div class="cal-header">Monday</div>
+      <div class="cal-header">Tuesday</div>
+      <div class="cal-header">Wednesday</div>
+      <div class="cal-header">Thursday</div>
+      <div class="cal-header">Friday</div>
+      <div class="cal-week-label">Week 2</div>
+      <div class="cal-cell"><div class="cal-cell-content">Weekly drink reveal #2 + Lotus brand feature</div><div class="cal-cell-platform">Instagram</div></div>
+      <div class="cal-cell"><div class="cal-cell-content">Cutdown of Monday's reveal</div><div class="cal-cell-platform">TikTok</div></div>
+      <div class="cal-cell"><div class="cal-cell-content">Readeasy explainer + "first in the world" reveal</div><div class="cal-cell-platform">Instagram, Facebook</div></div>
+      <div class="cal-cell"><div class="cal-cell-content">Trend-hop slot</div><div class="cal-cell-platform">TikTok</div></div>
+      <div class="cal-cell"><div class="cal-cell-content">Book of the Week #1</div><div class="cal-cell-platform">Instagram</div></div>
+    </div>
+
+    <div class="cal-grid reveal">
+      <div class="cal-corner"></div>
+      <div class="cal-header">Monday</div>
+      <div class="cal-header">Tuesday</div>
+      <div class="cal-header">Wednesday</div>
+      <div class="cal-header">Thursday</div>
+      <div class="cal-header">Friday</div>
+      <div class="cal-week-label">Week 3</div>
+      <div class="cal-cell"><div class="cal-cell-content">Weekly drink reveal #3 + "Name the Drink" contest launch</div><div class="cal-cell-platform">Instagram</div></div>
+      <div class="cal-cell"><div class="cal-cell-content">Contest reminder / cutdown</div><div class="cal-cell-platform">TikTok</div></div>
+      <div class="cal-cell"><div class="cal-cell-content">Crow's Nest secret entrance tease</div><div class="cal-cell-platform">Instagram, Facebook</div></div>
+      <div class="cal-cell"><div class="cal-cell-content">Mood board teaser</div><div class="cal-cell-platform">Instagram, Facebook</div></div>
+      <div class="cal-cell"><div class="cal-cell-content">"The Leap" corporate job to the dream</div><div class="cal-cell-platform">Facebook, Instagram</div></div>
+    </div>
+
+    <div class="cal-grid reveal">
+      <div class="cal-corner"></div>
+      <div class="cal-header">Monday</div>
+      <div class="cal-header">Tuesday</div>
+      <div class="cal-header">Wednesday</div>
+      <div class="cal-header">Thursday</div>
+      <div class="cal-header">Friday</div>
+      <div class="cal-week-label">Week 4</div>
+      <div class="cal-cell"><div class="cal-cell-content">Weekly drink reveal #4 + plant-based energy 101</div><div class="cal-cell-platform">Instagram</div></div>
+      <div class="cal-cell"><div class="cal-cell-content">Cutdown</div><div class="cal-cell-platform">TikTok</div></div>
+      <div class="cal-cell"><div class="cal-cell-content">Crow's Nest outdoor seating, kid/pet policy, hours</div><div class="cal-cell-platform">Instagram, Facebook</div></div>
+      <div class="cal-cell"><div class="cal-cell-content">Trend-hop slot #2</div><div class="cal-cell-platform">TikTok</div></div>
+      <div class="cal-cell"><div class="cal-cell-content">Waitlist milestone post ("100+ on the list!")</div><div class="cal-cell-platform">Instagram, Facebook</div></div>
+    </div>
+
+  </div>
+</section>
+
+<div class="gold-rule"></div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-wordmark"><img src="bigsis-logo.png" alt="Big Sis" class="footer-logo"></div>
+    <div class="footer-chips">
+      <span class="chip">Confidential</span>
+      <span class="footer-credit">Big Sis Creative Studio × Lucky Crow Apothecary &amp; Readeasy™ · 2026</span>
+    </div>
+  </div>
+</footer>
+
+<!-- ARCHIVE -->
+<div class="archive-header-bar">
+  <span class="archive-header-label">Previous Presentations</span>
+</div>
+
+<div class="archive-section">
+  <button class="archive-btn" onclick="this.classList.toggle('open'); this.nextElementSibling.classList.toggle('open')">
+    <span>Survey Flyer Creative Review · 06.16.2026</span>
+    <span class="archive-chevron">↓</span>
+  </button>
+  <div class="archive-panel">
+    <div class="arc-inner">
+      <div class="arc-header">
+        <h3>Survey Flyer Creative Review</h3>
+        <p>Lucky Crow Apothecary &amp; Readeasy™ · 06.16.2026</p>
+      </div>
+
+      <div class="sec-bar" style="margin-bottom: 16px;"></div>
+      <div class="sec-label">Flyers</div>
+      <h2 class="sec-h2" style="font-size: 32px; margin-bottom: 24px;">Grabbing attention</h2>
+
+      <div class="flyer-recap">
+        <ul>
+          <li>→ <strong>Messaging approach:</strong> Each flyer leads with a targeted hook for a specific audience, builds community by inviting them to help shape what's coming, and frames the survey as low-lift with a clear "2 minute survey" call to action.</li>
+          <li>→ <strong>Design approach:</strong> Visuals and copy create intrigue without revealing too much, with a prominent but unobtrusive QR code designed to grab attention in the places we'll be posting.</li>
+          <li>→ <strong>Incentive:</strong> Each flyer acknowledges a thank-you gift to reward participation.</li>
+        </ul>
+      </div>
+
+      <p class="flyer-expand-hint">Click any flyer to expand.</p>
+      <div class="flyer-grid">
+        <div class="flyer-card">
+          <div class="flyer-label">Reading</div>
+          <img src="LuckyCrow_SurveyFliers_READING.png" alt="Reading Hideaway flyer" class="flyer-thumb" onclick="openLightbox(this.src)">
+        </div>
+        <div class="flyer-card">
+          <div class="flyer-label">Wellness</div>
+          <img src="LuckyCrow_SurveyFliers_WELLNESS.png" alt="Plant-Powered Drink Experience flyer" class="flyer-thumb" onclick="openLightbox(this.src)">
+        </div>
+        <div class="flyer-card">
+          <div class="flyer-label">Third Space</div>
+          <img src="LuckyCrow_SurveyFliers_THIRDSPACES.png" alt="A Space to Work, Read &amp; Escape flyer" class="flyer-thumb" onclick="openLightbox(this.src)">
+        </div>
+      </div>
+      <p class="flyer-note">Borders may be modified depending on printing technique.</p>
+      <div class="pdf-download">
+        <a href="https://drive.google.com/file/d/1zQKwSbrI7OVVwfLnt564dfPOQZHnEsdS/view?usp=sharing" target="_blank" class="pdf-btn">
+          <span class="pdf-icon">↓</span> Download print-ready PDF
+        </a>
+        <p class="pdf-note">All three flyers · print-ready</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="archive-section">
+  <button class="archive-btn" onclick="this.classList.toggle('open'); this.nextElementSibling.classList.toggle('open')">
+    <span>Survey Review &amp; Recommendations · 06.09.2026</span>
+    <span class="archive-chevron">↓</span>
+  </button>
+  <div class="archive-panel">
+    <div class="arc-inner">
+      <div class="arc-header">
+        <h3>Survey Review &amp; Recommendations</h3>
+        <p>Lucky Crow Apothecary &amp; Readeasy™ · Presentation 02 · 06.09.2026</p>
+      </div>
+      <p style="color: var(--text-dim); font-family: var(--ff-body); font-size: 15px; font-style: italic;">Full presentation content archived here. Contact Big Sis for access to the complete survey strategy document.</p>
+    </div>
+  </div>
+</div>
+
+<div class="archive-section">
+  <button class="archive-btn" onclick="this.classList.toggle('open'); this.nextElementSibling.classList.toggle('open')">
+    <span>Survey Strategy Kickoff · 06.02.2026</span>
+    <span class="archive-chevron">↓</span>
+  </button>
+  <div class="archive-panel">
+    <div class="arc-inner">
+      <div class="arc-header">
+        <h3>Survey Strategy Kickoff</h3>
+        <p>Lucky Crow Apothecary &amp; Readeasy™ · Presentation 01 · 06.02.2026</p>
+      </div>
+      <p style="color: var(--text-dim); font-family: var(--ff-body); font-size: 15px; font-style: italic;">Full presentation content archived here. Contact Big Sis for access to the complete survey strategy document.</p>
+    </div>
+  </div>
+</div>
+
+<!-- LIGHTBOX -->
+<div id="lightbox" onclick="closeLightbox()">
+  <img id="lightbox-img" src="">
+</div>
+
+<script>
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+  function openLightbox(src) {
+    document.getElementById('lightbox-img').src = src;
+    document.getElementById('lightbox').classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeLightbox() {
+    document.getElementById('lightbox').classList.remove('open');
+    document.body.style.overflow = '';
+  }
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') closeLightbox();
+  });
+</script>
+</body>
+</html>
