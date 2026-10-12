@@ -267,6 +267,9 @@
   .steps-list { list-style: none; counter-reset: step; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 14px; }
   .steps-list li { counter-increment: step; display: grid; grid-template-columns: 32px 1fr; gap: 12px; align-items: baseline; font-family: var(--ff-body); font-size: 15px; line-height: 1.6; color: var(--text-mid); }
   .steps-list li::before { content: counter(step); font-family: var(--ff-display); font-style: italic; font-weight: 700; font-size: 22px; color: var(--gold); }
+  .steps-list .sub-list { list-style: none; margin: 10px 0 0; padding: 0; display: flex; flex-direction: column; gap: 6px; }
+  .steps-list .sub-list li { display: block; counter-increment: none; position: relative; padding-left: 22px; font-size: 14.5px; }
+  .steps-list .sub-list li::before { content: "→"; position: absolute; left: 0; top: 0; font-family: var(--ff-body); font-style: normal; font-weight: 400; font-size: 14px; color: var(--gold); }
   .note-lead { font-family: var(--ff-body); font-size: 15px; line-height: 1.7; color: var(--text-mid); margin: 0 0 18px; max-width: 46em; }
 
   /* ===== NEW: color palette ===== */
@@ -394,7 +397,7 @@
       <div class="opt-head">
         <span class="opt-num">Option 2</span>
         <span class="opt-name">Stacked</span>
-        <span class="opt-note">Apothecary on a plaque, Readeasy on a ribbon below</span>
+        <span class="opt-note">Art Deco, apothecary label inspired</span>
       </div>
       <div class="opt-grid">
           <figure class="opt-card">
@@ -411,7 +414,7 @@
       <div class="opt-head">
         <span class="opt-num">Option 3</span>
         <span class="opt-name">Horizontal</span>
-        <span class="opt-note">One continuous ribbon banner</span>
+        <span class="opt-note">One continuous ribbon banner using ampersand in between words</span>
       </div>
       <div class="opt-grid">
           <figure class="opt-card">
@@ -435,18 +438,15 @@
       </ul>
     </div>
 
-    <div class="react-card reveal" style="margin-top:32px;">
-      <div class="bottom-line-label">What we need from you</div>
-      <ul class="finding-list">
-        <li>Which direction feels most like Lucky Crow?</li>
-        <li>Which colorway holds up best next to the foundational mark?</li>
-      </ul>
-    </div>
-
     <div class="react-card steps-card reveal" style="margin-top:32px;">
       <div class="bottom-line-label">Next steps</div>
       <ol class="steps-list">
-        <li>Feedback and directional approval from Katy.</li>
+        <li><div>Feedback and directional approval from Katy.
+          <ul class="sub-list">
+            <li>Which direction feels most like Lucky Crow?</li>
+            <li>Which colorway holds up best next to the foundational mark?</li>
+          </ul>
+        </div></li>
         <li>Finish the logo family, including a one-color version.</li>
         <li>Deliver files, plus usage guidelines and rules.</li>
         <li>Add secondary colors and a typography section, building on her foundation. It will show Headline and Body font options, with usage rules and guidelines.</li>
