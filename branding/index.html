@@ -349,6 +349,19 @@
     .nav-links::-webkit-scrollbar { display: none; }
     .nav-links a { white-space: nowrap; flex-shrink: 0; }
   }
+  /* CLICK TO ENLARGE (round 2) */
+  .r2-hint { font-family: var(--ff-body); font-size: 12px; letter-spacing: .04em; color: rgba(49,20,70,0.65); margin-top: 18px; }
+  .r2-zoom { display: block; width: 100%; padding: 0; border: 0; background: none; cursor: zoom-in; border-radius: 4px; }
+  .r2-zoom .r2-plate { transition: box-shadow .2s, transform .2s; }
+  .r2-zoom:hover .r2-plate, .r2-zoom:focus-visible .r2-plate { box-shadow: 0 0 0 2px #532568; transform: translateY(-2px); }
+  .r2-zoom:focus-visible { outline: none; }
+  .lc-lightbox { position: fixed; inset: 0; z-index: 500; display: none; align-items: center; justify-content: center; padding: 24px; background: rgba(8,9,22,0.88); cursor: zoom-out; }
+  .lc-lightbox.open { display: flex; }
+  .lc-lightbox-frame { background: #f4f2ea; border-radius: 4px; padding: clamp(20px, 4vw, 48px); width: min(92vw, 760px); max-height: 90vh; display: flex; flex-direction: column; align-items: center; gap: 14px; cursor: default; }
+  .lc-lightbox-frame img { width: 100%; height: auto; max-height: calc(90vh - 120px); object-fit: contain; display: block; }
+  .lc-lightbox-cap { font-family: var(--ff-body); font-size: 13px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: #2a0f40; }
+  .lc-lightbox-close { position: absolute; top: 16px; right: 20px; background: none; border: 0; color: #fff; font-size: 34px; line-height: 1; cursor: pointer; padding: 4px 10px; }
+  .lc-lightbox-close:focus-visible { outline: 2px solid var(--gold); }
   /* FEEDBACK + APPROACH */
   .fb-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 8px; }
   .fb-card { background: var(--bg-3); border: 1px solid var(--rule); border-top: 3px solid var(--gold); border-radius: 2px; padding: 32px 32px 36px; }
@@ -415,18 +428,19 @@
     </div>
     <div class="r2-grid reveal">
       <figure class="r2-card">
-        <div class="r2-plate"><img src="lc-full-r2-option1.png" width="349" height="327" alt="Lucky Crow full mark, round 2, option 1"></div>
+        <button class="r2-zoom" type="button" data-zoom="lc-full-r2-option1.png" data-cap="Option 1" aria-label="Enlarge option 1"><div class="r2-plate"><img src="lc-full-r2-option1.png" width="349" height="327" alt="Lucky Crow full mark, round 2, option 1"></div></button>
         <figcaption>Option 1</figcaption>
       </figure>
       <figure class="r2-card">
-        <div class="r2-plate"><img src="lc-full-r2-option2.png" width="353" height="331" alt="Lucky Crow full mark, round 2, option 2"></div>
+        <button class="r2-zoom" type="button" data-zoom="lc-full-r2-option2.png" data-cap="Option 2" aria-label="Enlarge option 2"><div class="r2-plate"><img src="lc-full-r2-option2.png" width="353" height="331" alt="Lucky Crow full mark, round 2, option 2"></div></button>
         <figcaption>Option 2</figcaption>
       </figure>
       <figure class="r2-card">
-        <div class="r2-plate"><img src="lc-full-r2-option3.png" width="356" height="332" alt="Lucky Crow full mark, round 2, option 3"></div>
+        <button class="r2-zoom" type="button" data-zoom="lc-full-r2-option3.png" data-cap="Option 3" aria-label="Enlarge option 3"><div class="r2-plate"><img src="lc-full-r2-option3.png" width="356" height="332" alt="Lucky Crow full mark, round 2, option 3"></div></button>
         <figcaption>Option 3</figcaption>
       </figure>
     </div>
+    <p class="r2-hint reveal">Click logos to enlarge.</p>
   </div>
 </section>
 
@@ -1510,5 +1524,29 @@
   });
 </script>
 
+<div class="lc-lightbox" id="lcLightbox" role="dialog" aria-modal="true" aria-label="Enlarged logo">
+  <button class="lc-lightbox-close" type="button" aria-label="Close">&times;</button>
+  <div class="lc-lightbox-frame"><img id="lcLightboxImg" src="" alt=""><div class="lc-lightbox-cap" id="lcLightboxCap"></div></div>
+</div>
+<script>
+  (function () {
+    var box = document.getElementById('lcLightbox'), img = document.getElementById('lcLightboxImg'), cap = document.getElementById('lcLightboxCap');
+    var closeBtn = box.querySelector('.lc-lightbox-close'), lastFocus = null;
+    function open(btn) {
+      lastFocus = btn;
+      img.src = btn.dataset.zoom; img.alt = 'Lucky Crow full mark, ' + btn.dataset.cap;
+      cap.textContent = btn.dataset.cap;
+      box.classList.add('open'); document.body.style.overflow = 'hidden'; closeBtn.focus();
+    }
+    function close() {
+      box.classList.remove('open'); document.body.style.overflow = '';
+      if (lastFocus) lastFocus.focus();
+    }
+    document.querySelectorAll('.r2-zoom').forEach(function (b) { b.addEventListener('click', function () { open(b); }); });
+    box.addEventListener('click', function (e) { if (!e.target.closest('.lc-lightbox-frame')) close(); });
+    closeBtn.addEventListener('click', close);
+    document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && box.classList.contains('open')) close(); });
+  })();
+</script>
 </body>
 </html>
