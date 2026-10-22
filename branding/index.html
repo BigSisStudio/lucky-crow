@@ -331,6 +331,44 @@
     .reveal { opacity: 1; transform: none; transition: none; }
     .archive-panel { transition: none; }
   }
+
+  /* ROUND 2 OPTIONS (light section) */
+  .r2 { background: #ded9df; }
+  .r2 .sec-bar { background: #532568; }
+  .r2 .sec-label { color: rgba(49,20,70,0.75); }
+  .r2 .sec-h2 { color: #2a0f40; }
+  .r2 .draft-chip { color: #532568; border-color: rgba(83,37,104,0.45); }
+  .r2-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 40px; }
+  .r2-card { margin: 0; }
+  .r2-plate { background: #f4f2ea; border-radius: 4px; padding: 28px 20px; display: flex; align-items: center; justify-content: center; aspect-ratio: 1 / 1; }
+  .r2-plate img { width: 100%; max-width: 356px; height: auto; display: block; }
+  .r2-card figcaption { font-family: var(--ff-body); font-size: 13px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: #2a0f40; margin-top: 14px; }
+  .round-tag { display: inline-block; font-family: var(--ff-body); font-size: 10px; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: var(--text-mid); border: 1px solid var(--rule); padding: 4px 10px; border-radius: 2px; margin-left: 8px; }
+  @media (max-width: 700px) {
+    .nav-links { overflow-x: auto; justify-content: flex-start; gap: 16px; scrollbar-width: none; }
+    .nav-links::-webkit-scrollbar { display: none; }
+    .nav-links a { white-space: nowrap; flex-shrink: 0; }
+  }
+  /* FEEDBACK + APPROACH */
+  .fb-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 8px; }
+  .fb-card { background: var(--bg-3); border: 1px solid var(--rule); border-top: 3px solid var(--gold); border-radius: 2px; padding: 32px 32px 36px; }
+  .fb-card.landed { border-top-color: #9b7bb3; }
+  .fb-card-label { font-family: var(--ff-body); font-size: 11px; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: var(--gold); margin-bottom: 20px; }
+  .fb-card.landed .fb-card-label { color: #c3a8d6; }
+  .fb-list { list-style: none; display: flex; flex-direction: column; gap: 14px; }
+  .fb-list li { font-family: var(--ff-body); font-size: 15px; line-height: 1.65; color: var(--text-mid); padding-left: 1.4em; text-indent: -1.4em; }
+  .fb-list li::before { content: "→ "; color: var(--gold); }
+  .fb-card.landed .fb-list li::before { color: #c3a8d6; }
+  .fb-list strong { color: var(--text); font-weight: 700; }
+  /* REFERENCE CALLOUT (round 1) */
+  .ref-callout { display: flex; align-items: center; gap: 18px; background: rgba(175,155,9,0.08); border: 1px solid var(--rule-gold); border-left: 3px solid var(--gold); border-radius: 2px; padding: 16px 22px; margin-bottom: 48px; }
+  .ref-arrow { font-size: 26px; line-height: 1; color: var(--gold); animation: refNudge 1.8s ease-in-out infinite; }
+  .ref-text { font-family: var(--ff-body); font-size: 14px; line-height: 1.5; color: var(--text-mid); }
+  .ref-text strong { display: block; font-size: 11px; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: var(--gold); margin-bottom: 2px; }
+  @keyframes refNudge { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(5px); } }
+  @media (prefers-reduced-motion: reduce) { .ref-arrow { animation: none; } }
+  @media (max-width: 860px) { .fb-grid { grid-template-columns: 1fr; } .fb-card { padding: 26px 22px; } }
+  @media (max-width: 860px) { .r2-grid { grid-template-columns: 1fr; max-width: 420px; margin-left: auto; margin-right: auto; } }
 </style>
 </head>
 <body>
@@ -339,7 +377,9 @@
 <nav>
   <span class="nav-project">Lucky Crow / Brand Identity</span>
   <div class="nav-links">
-    <a href="#full-mark">Full mark</a>
+    <a href="#feedback">Feedback</a>
+    <a href="#updated">Updated options</a>
+    <a href="#full-mark">Previous round</a>
     <a href="#foundational">Foundational</a>
     <a href="#digital">Digital</a>
     <a href="#colors">Colors</a>
@@ -357,20 +397,87 @@
     <div class="hero-text">
       <div class="hero-label">Big Sis Creative Studio × Lucky Crow</div>
       <h1 class="hero-h1">Logo update<br>review</h1>
-      <p class="hero-sub">Three options for consideration, adding Apothecary &amp; Readeasy to the approved foundational mark.</p>
-      <div class="hero-meta">October 12, 2026</div>
+      <p class="hero-sub">Three updated options for Apothecary &amp; Readeasy, built from Katy&rsquo;s feedback.</p>
+      <div class="hero-meta">October 21, 2026</div>
     </div>
   </div>
 </section>
 
 <div class="gold-rule"></div>
 
-<!-- FULL MARK OPTIONS -->
-<section class="sec" id="full-mark" style="background: var(--bg);">
+<!-- ROUND 1 FEEDBACK + OUR APPROACH -->
+<section class="sec" id="feedback" style="background: var(--bg);">
   <div class="sec-inner">
     <div class="reveal">
       <div class="sec-bar"></div>
-      <div class="sec-label" style="color:rgba(245,240,250,0.72);">Full mark · In progress</div>
+      <div class="sec-label" style="color:rgba(245,240,250,0.72);">Round 1 · Feedback &amp; approach</div>
+      <h2 class="sec-h2">What we heard, where we landed</h2>
+    </div>
+    <div class="fb-grid reveal">
+      <div class="fb-card">
+        <div class="fb-card-label">Katy&rsquo;s feedback</div>
+        <ul class="fb-list">
+          <li><strong>Placement:</strong> Move the words underneath so less of the lotus is covered.</li>
+          <li><strong>Type:</strong> Set Apothecary &amp; Readeasy in Playfair Display, all caps and bold, so it&rsquo;s easier to read.</li>
+          <li><strong>Ribbon:</strong> Add a ribbon behind the words as a nod to a bookmark.</li>
+          <li><strong>Shape:</strong> Keep the overall shape of the Option 1 banner, with the middle fold tucked behind the center leaf of the lotus.</li>
+          <li><strong>Ends:</strong> Use V-cut (dovetail) ends, which feel more like a bookmark.</li>
+        </ul>
+      </div>
+      <div class="fb-card landed">
+        <div class="fb-card-label">Where we landed</div>
+        <ul class="fb-list">
+          <li><strong>Lotus first:</strong> The words now sit below the flower, and the curved banner shapes that competed with it are gone.</li>
+          <li><strong>Legibility:</strong> A bolder, simpler typeface, set larger, so Apothecary &amp; Readeasy reads clearly and holds up at small sizes.</li>
+          <li><strong>Bookmark ribbon:</strong> The ribbon wraps behind the center leaf, and Options 1 and 3 use V-cut ends.</li>
+          <li><strong>Balance:</strong> The ampersand moves to the right, with Readeasy, so both sides of the center leaf carry equal weight.</li>
+          <li><strong>Finishing touch:</strong> Thin Art Deco lines add polish without extra ornament.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="gold-rule"></div>
+
+<!-- ROUND 2: UPDATED FULL MARK OPTIONS -->
+<section class="sec r2" id="updated">
+  <div class="sec-inner">
+    <div class="reveal">
+      <div class="sec-bar"></div>
+      <div class="sec-label">Full mark · Round 2</div>
+      <h2 class="sec-h2">Full mark: 3 updated options</h2>
+      <div class="draft-chip">Not final</div>
+    </div>
+    <div class="r2-grid reveal">
+      <figure class="r2-card">
+        <div class="r2-plate"><img src="lc-full-r2-option1.png" width="349" height="327" alt="Lucky Crow full mark, round 2, option 1"></div>
+        <figcaption>Option 1</figcaption>
+      </figure>
+      <figure class="r2-card">
+        <div class="r2-plate"><img src="lc-full-r2-option2.png" width="353" height="331" alt="Lucky Crow full mark, round 2, option 2"></div>
+        <figcaption>Option 2</figcaption>
+      </figure>
+      <figure class="r2-card">
+        <div class="r2-plate"><img src="lc-full-r2-option3.png" width="356" height="332" alt="Lucky Crow full mark, round 2, option 3"></div>
+        <figcaption>Option 3</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<div class="gold-rule"></div>
+
+<!-- FULL MARK OPTIONS (ROUND 1) -->
+<section class="sec" id="full-mark" style="background: var(--bg);">
+  <div class="sec-inner">
+    <div class="ref-callout reveal" role="note">
+      <span class="ref-arrow" aria-hidden="true">↓</span>
+      <span class="ref-text"><strong>For reference</strong>Options from last round, presented October 12, 2026.</span>
+    </div>
+    <div class="reveal">
+      <div class="sec-bar"></div>
+      <div class="sec-label" style="color:rgba(245,240,250,0.72);">Full mark · Round 1 · October 12, 2026</div>
       <h2 class="sec-h2">Full mark: 3 options</h2>
       <div class="draft-chip">Not final</div>
       <p class="sec-intro">There are 3 options, with 2 colorways each. Once you decide which feels the most like Lucky Crow, we’ll refine it and build out the rest of the logo family.</p>
