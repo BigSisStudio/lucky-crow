@@ -349,6 +349,20 @@
     .nav-links::-webkit-scrollbar { display: none; }
     .nav-links a { white-space: nowrap; flex-shrink: 0; }
   }
+  /* ROUND 3: type options, two colorways each */
+  .r3-opt { margin-top: 48px; }
+  .r3-opt:first-of-type { margin-top: 40px; }
+  .r3-opt-head { display: flex; align-items: baseline; gap: 14px; padding-bottom: 14px; margin-bottom: 20px; border-bottom: 1px solid rgba(83,37,104,0.25); }
+  .r3-opt-num { font-family: var(--ff-body); font-size: 12px; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; color: #2a0f40; }
+  .r3-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+  .r3-grid .r2-plate { aspect-ratio: 4 / 3; }
+  .r3-grid .r2-plate img { width: auto; max-width: 100%; max-height: 100%; }
+  /* reference callout on a light section */
+  .r2 .ref-callout { background: rgba(83,37,104,0.06); border-color: rgba(83,37,104,0.25); border-left-color: #532568; }
+  .r2 .ref-arrow { color: #532568; }
+  .r2 .ref-text { color: rgba(49,20,70,0.8); }
+  .r2 .ref-text strong { color: #532568; }
+  @media (max-width: 700px) { .r3-grid { grid-template-columns: 1fr; } .r3-grid .r2-plate { aspect-ratio: 1 / 1; } }
   /* CLICK TO ENLARGE (round 2) */
   .r2-hint { font-family: var(--ff-body); font-size: 12px; letter-spacing: .04em; color: rgba(49,20,70,0.65); margin-top: 18px; }
   .r2-zoom { display: block; width: 100%; padding: 0; border: 0; background: none; cursor: zoom-in; border-radius: 4px; }
@@ -391,7 +405,7 @@
   <span class="nav-project">Lucky Crow / Brand Identity</span>
   <div class="nav-links">
     <a href="#updated">Updated options</a>
-    <a href="#full-mark">Previous round</a>
+    <a href="#round-2">Previous round</a>
     <a href="#foundational">Foundational</a>
     <a href="#digital">Digital</a>
     <a href="#colors">Colors</a>
@@ -409,20 +423,78 @@
     <div class="hero-text">
       <div class="hero-label">Big Sis Creative Studio × Lucky Crow</div>
       <h1 class="hero-h1">Logo update<br>review</h1>
-      <p class="hero-sub">Three updated options for Apothecary &amp; Readeasy, built from Katy&rsquo;s feedback.</p>
-      <div class="hero-meta">October 21, 2026</div>
+      <p class="hero-sub">Three type options for Apothecary &amp; Readeasy, each in two colorways.</p>
+      <div class="hero-meta">October 26, 2026</div>
     </div>
   </div>
 </section>
 
 <div class="gold-rule"></div>
 
-<!-- ROUND 2: UPDATED FULL MARK OPTIONS -->
+<!-- ROUND 3: TYPE OPTIONS -->
 <section class="sec r2" id="updated">
   <div class="sec-inner">
     <div class="reveal">
       <div class="sec-bar"></div>
-      <div class="sec-label">Full mark · Round 2</div>
+      <div class="sec-label">Full mark · Round 3</div>
+      <h2 class="sec-h2">Full mark, updated options</h2>
+      <div class="draft-chip">Not final</div>
+    </div>
+    <div class="r3-opt reveal">
+      <div class="r3-opt-head"><span class="r3-opt-num">Option 1</span></div>
+      <div class="r3-grid">
+          <figure class="r2-card">
+            <button class="r2-zoom" type="button" data-zoom="lc-full-r3-option1-purple.png" data-cap="Option 1 · Purple" aria-label="Enlarge option 1, purple"><div class="r2-plate"><img src="lc-full-r3-option1-purple.png" width="353" height="331" alt="Lucky Crow full mark, round 3, option 1, purple type" loading="lazy"></div></button>
+            <figcaption>Purple</figcaption>
+          </figure>
+          <figure class="r2-card">
+            <button class="r2-zoom" type="button" data-zoom="lc-full-r3-option1-black.png" data-cap="Option 1 · Black" aria-label="Enlarge option 1, black"><div class="r2-plate"><img src="lc-full-r3-option1-black.png" width="353" height="331" alt="Lucky Crow full mark, round 3, option 1, black type" loading="lazy"></div></button>
+            <figcaption>Black</figcaption>
+          </figure>
+      </div>
+    </div>
+    <div class="r3-opt reveal">
+      <div class="r3-opt-head"><span class="r3-opt-num">Option 2</span></div>
+      <div class="r3-grid">
+          <figure class="r2-card">
+            <button class="r2-zoom" type="button" data-zoom="lc-full-r3-option2-purple.png" data-cap="Option 2 · Purple" aria-label="Enlarge option 2, purple"><div class="r2-plate"><img src="lc-full-r3-option2-purple.png" width="353" height="331" alt="Lucky Crow full mark, round 3, option 2, purple type" loading="lazy"></div></button>
+            <figcaption>Purple</figcaption>
+          </figure>
+          <figure class="r2-card">
+            <button class="r2-zoom" type="button" data-zoom="lc-full-r3-option2-black.png" data-cap="Option 2 · Black" aria-label="Enlarge option 2, black"><div class="r2-plate"><img src="lc-full-r3-option2-black.png" width="353" height="331" alt="Lucky Crow full mark, round 3, option 2, black type" loading="lazy"></div></button>
+            <figcaption>Black</figcaption>
+          </figure>
+      </div>
+    </div>
+    <div class="r3-opt reveal">
+      <div class="r3-opt-head"><span class="r3-opt-num">Option 3</span></div>
+      <div class="r3-grid">
+          <figure class="r2-card">
+            <button class="r2-zoom" type="button" data-zoom="lc-full-r3-option3-purple.png" data-cap="Option 3 · Purple" aria-label="Enlarge option 3, purple"><div class="r2-plate"><img src="lc-full-r3-option3-purple.png" width="353" height="331" alt="Lucky Crow full mark, round 3, option 3, purple type" loading="lazy"></div></button>
+            <figcaption>Purple</figcaption>
+          </figure>
+          <figure class="r2-card">
+            <button class="r2-zoom" type="button" data-zoom="lc-full-r3-option3-black.png" data-cap="Option 3 · Black" aria-label="Enlarge option 3, black"><div class="r2-plate"><img src="lc-full-r3-option3-black.png" width="353" height="331" alt="Lucky Crow full mark, round 3, option 3, black type" loading="lazy"></div></button>
+            <figcaption>Black</figcaption>
+          </figure>
+      </div>
+    </div>
+    <p class="r2-hint reveal">Click logos to enlarge.</p>
+  </div>
+</section>
+
+<div class="gold-rule"></div>
+
+<!-- ROUND 2: UPDATED FULL MARK OPTIONS -->
+<section class="sec r2" id="round-2">
+  <div class="sec-inner">
+    <div class="ref-callout reveal" role="note">
+      <span class="ref-arrow" aria-hidden="true">↓</span>
+      <span class="ref-text"><strong>For reference</strong>Options from last round, presented October 21, 2026.</span>
+    </div>
+    <div class="reveal">
+      <div class="sec-bar"></div>
+      <div class="sec-label">Full mark · Round 2 · October 21, 2026</div>
       <h2 class="sec-h2">Full mark: 3 updated options</h2>
       <div class="draft-chip">Not final</div>
     </div>
