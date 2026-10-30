@@ -287,6 +287,10 @@
       radial-gradient(circle 14px at 0 100%, #0000 96%, #000) 0 100% / 51% 51% no-repeat,
       radial-gradient(circle 14px at 100% 100%, #0000 96%, #000) 100% 100% / 51% 51% no-repeat;
   }
+  .palette-sub { font-family: var(--ff-body); font-size: 12px; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; color: rgba(49,20,70,0.8); margin: 48px 0 0; }
+  .palette-sub:first-of-type { margin-top: 8px; }
+  .swatch-grid.cols-4 { grid-template-columns: repeat(4, 1fr); margin-top: 20px; }
+  .chip-wrap { filter: drop-shadow(0 0 1px rgba(49,20,70,0.55)); }
   .swatch-name { font-family: var(--ff-display); font-weight: 700; font-size: 17px; line-height: 1.25; color: #2a0f40; margin: 16px 0 12px; }
   .swatch-specs { display: flex; flex-direction: column; gap: 6px; margin: 0; }
   .swatch-specs > div { display: grid; grid-template-columns: 58px 1fr; gap: 8px; align-items: baseline; }
@@ -304,7 +308,7 @@
   .archive-old { background: var(--bg); }
 
   @media (max-width: 860px) {
-    .swatch-grid { grid-template-columns: repeat(3, 1fr); }
+    .swatch-grid, .swatch-grid.cols-4 { grid-template-columns: repeat(2, 1fr); }
   }
   @media (max-width: 700px) {
     .hero-gc { padding: 56px 20px; min-height: auto; }
@@ -312,7 +316,7 @@
     .hero-gc-mark img { max-width: 280px; }
     .opt-grid { grid-template-columns: 1fr; }
     .opt-plate { height: 380px; padding: 24px 16px; }
-    .swatch-grid { grid-template-columns: repeat(2, 1fr); }
+    .swatch-grid, .swatch-grid.cols-4 { grid-template-columns: repeat(2, 1fr); }
     .react-card { padding: 24px 20px; }
     .footer-inner { flex-direction: column; align-items: flex-start; gap: 20px; }
   }
@@ -668,11 +672,12 @@
 <section class="sec" id="colors" style="background: #f4f2ea;">
   <div class="sec-inner reveal">
     <div class="sec-bar" style="background:#532568;"></div>
-    <div class="sec-label" style="color:rgba(49,20,70,0.75);">Brand system · Primary palette</div>
-    <h2 class="sec-h2" style="color:#2a0f40;">Lucky Crow primary palette.</h2>
-    <p class="sec-intro" style="border-left-color:rgba(83,37,104,0.25);color:rgba(49,20,70,0.8);">The primary palette, with values for screen and print. Secondary colors, including a teal, come later in the build. Click a hex code to copy it.</p>
+    <div class="sec-label" style="color:rgba(49,20,70,0.75);">Brand system · Color</div>
+    <h2 class="sec-h2" style="color:#2a0f40;">Lucky Crow color palette.</h2>
+    <p class="sec-intro" style="border-left-color:rgba(83,37,104,0.25);color:rgba(49,20,70,0.8);">Two palettes, with values for screen and print. The primary palette carries the brand. The secondary palette is mostly for backgrounds. Click a hex code to copy it.</p>
 
-    <div class="swatch-grid">
+    <h3 class="palette-sub">Primary palette</h3>
+    <div class="swatch-grid cols-4">
         <div class="swatch">
           <div class="swatch-chip" style="background:#080916;"></div>
           <div class="swatch-name">Crow&#x27;s Feather</div>
@@ -713,19 +718,53 @@
             <div><dt>Pantone</dt><dd>104 C</dd></div>
           </dl>
         </div>
+    </div>
+
+    <h3 class="palette-sub">Secondary palette</h3>
+    <div class="swatch-grid cols-4">
         <div class="swatch">
-          <div class="swatch-chip" style="background:#000000;"></div>
+          <div class="chip-wrap"><div class="swatch-chip" style="background:#337575;"></div></div>
+          <div class="swatch-name">Emerald</div>
+          <dl class="swatch-specs">
+            <div><dt>HEX</dt><dd><button class="copy" type="button" data-copy="#337575" aria-label="Copy Emerald hex value #337575">#337575</button></dd></div>
+            <div><dt>RGB</dt><dd>51 · 117 · 117</dd></div>
+            <div><dt>CMYK</dt><dd>80 · 38 · 50 · 14</dd></div>
+            <div><dt>Pantone</dt><dd>5473 C (approx.)</dd></div>
+          </dl>
+        </div>
+        <div class="swatch">
+          <div class="chip-wrap"><div class="swatch-chip" style="background:#F7F3EF;"></div></div>
+          <div class="swatch-name">Enamel</div>
+          <dl class="swatch-specs">
+            <div><dt>HEX</dt><dd><button class="copy" type="button" data-copy="#F7F3EF" aria-label="Copy Enamel hex value #F7F3EF">#F7F3EF</button></dd></div>
+            <div><dt>RGB</dt><dd>247 · 243 · 239</dd></div>
+            <div><dt>CMYK</dt><dd>2 · 3 · 4 · 0</dd></div>
+            <div><dt>Pantone</dt><dd>Warm Gray 1 C, 40% tint (approx.)</dd></div>
+          </dl>
+        </div>
+        <div class="swatch">
+          <div class="chip-wrap"><div class="swatch-chip" style="background:#E4D8CD;"></div></div>
+          <div class="swatch-name">Bone</div>
+          <dl class="swatch-specs">
+            <div><dt>HEX</dt><dd><button class="copy" type="button" data-copy="#E4D8CD" aria-label="Copy Bone hex value #E4D8CD">#E4D8CD</button></dd></div>
+            <div><dt>RGB</dt><dd>228 · 216 · 205</dd></div>
+            <div><dt>CMYK</dt><dd>10 · 12 · 17 · 0</dd></div>
+            <div><dt>Pantone</dt><dd>Warm Gray 1 C (approx.)</dd></div>
+          </dl>
+        </div>
+        <div class="swatch">
+          <div class="chip-wrap"><div class="swatch-chip" style="background:#000000;"></div></div>
           <div class="swatch-name">Black</div>
           <dl class="swatch-specs">
             <div><dt>HEX</dt><dd><button class="copy" type="button" data-copy="#000000" aria-label="Copy Black hex value #000000">#000000</button></dd></div>
             <div><dt>RGB</dt><dd>0 · 0 · 0</dd></div>
             <div><dt>CMYK</dt><dd>0 · 0 · 0 · 100</dd></div>
-            <div><dt>Pantone</dt><dd>Black 6 C</dd></div>
+            <div><dt>Pantone</dt><dd>Black C</dd></div>
           </dl>
         </div>
     </div>
 
-    <p class="palette-note">HEX and RGB are the source values. CMYK is converted from RGB for coated stock. Pantone shows the closest match by digital value, and Pale Moon Purple is the loosest of the five. Confirm Pantone and CMYK against a physical swatch book or a press proof before anything goes to print.</p>
+    <p class="palette-note">HEX and RGB are the source values. Primary CMYK is converted from RGB for coated stock. Secondary CMYK comes from the Illustrator swatches. Pantone shows the closest match by digital value. Pale Moon Purple is the loosest of the primaries, and every secondary Pantone is an approximation. Confirm Pantone and CMYK against a physical swatch book or a press proof before anything goes to print.</p>
   </div>
 </section>
 
